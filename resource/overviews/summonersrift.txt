@@ -1,0 +1,9 @@
+summonersrift
+{
+	material materials/overviews/summonersrift.vmat
+	pos_x -5500
+	pos_y 5400
+	scale 10.4
+	zoom 1.0
+}
+
