@@ -2,7 +2,7 @@ DotL
 ====
 Community League of Legends Dota 2 Mod
 
-When working, try to form a team with what you're interested in. eg. actually talk to the guy who is working on the Vel'Koz programming, texture work, models and voice acting. This would make champion importing more coherant. Due to the nature of this project, the natures of some of the champions may change a little bit, so please work together so that the animation, sound effects and voice acting etc. all match... please...
+When working, try to form a team with what you're interested in. eg. if you want to work on Vel'Koz's voice lines, actually talk to the guy who is working on the Vel'Koz programming, texture work, and model. This would make champion importing more coherant. Due to the nature of this project, the natures of some of the champions may change a little bit, so please work together so that the animation, sound effects and voice acting etc. all match... please...
 
 ##The Plan
 Map maker (that's me)
