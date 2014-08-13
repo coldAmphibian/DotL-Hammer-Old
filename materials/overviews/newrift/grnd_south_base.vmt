@@ -1,0 +1,15 @@
+ "MultiBlend"
+{
+	"%keywords" "newrift"
+	"%tooltexture" "newrift/grnd_south_base"
+
+	"$basetexture"		"newrift/grnd_south_base"
+
+	"$basetexture2"		"newrift/grnd_south_base"
+
+	"$basetexture3"		"newrift/grnd_south_base"
+	
+	"$basetexture4"		"newrift/grnd_south_base"
+
+	"$fow" 				"_rt_fog_of_war"
+}
