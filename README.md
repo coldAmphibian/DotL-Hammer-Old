@@ -10,24 +10,27 @@ Map maker (that's me)
 * Launch when map is playable
 * Start work on programming and make map prettier
 
-##Programmers
+Programmers
 * Start adding champions, Use wiki for stats and the conversion of 550 dota range = 750 lol range
 * No ap system yet, once an ap system is in place, start adding ap ratios to spells and skills
 * BUSHESSSSSS
 
-##Modellers and animators!
+Modellers and animators!
 * Work on in game assets like the jungle islands
 * Champion models, Follow the workshop requirements for maximum good http://www.dota2.com/workshop/requirements
 * Poros!
 
-##Sounds
+Sounds
 * Fitting music if you want to try, haven't really considered it
 * Remixes of the lol theme which fits as being not too destracting
 * Hopefully eventually we can have champion select, so music for that would be cool too
 * Voice acting, have a listen to all the interactions on the dota wiki to see the quality that should be aimed for
 * Rice pirate's guide to not sounding shitty https://www.youtube.com/watch?v=r90Xy9eIU8E
 
-##Artists
+Artists
 * skill icons
 * map textures
 * in game artwork
+
+##Contributing and Credit
+[Please fill in this form so we know you exist](https://docs.google.com/forms/d/1kbk3tmqNW-vlnwXR2JCrdH2ZgSZNv9Z2l7ZlhuMxGwI/viewform?usp=send_form)
