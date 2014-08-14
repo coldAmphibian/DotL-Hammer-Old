@@ -24,8 +24,10 @@ Sounds
 * Fitting music if you want to try, haven't really considered it
 * Remixes of the lol theme which fits as being not too destracting
 * Hopefully eventually we can have champion select, so music for that would be cool too
+* 
 * Voice acting, have a listen to all the interactions on the dota wiki to see the quality that should be aimed for
 * Rice pirate's guide to not sounding shitty https://www.youtube.com/watch?v=r90Xy9eIU8E
+* Mandatory Voice Line List: "Here's *x* in your eye", "Good thing I have my *y* move"
 
 Artists
 * skill icons
