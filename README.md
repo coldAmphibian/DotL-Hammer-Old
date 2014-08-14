@@ -14,6 +14,7 @@ Programmers
 * Start adding champions, Use wiki for stats and the conversion of 550 dota range = 750 lol range
 * No ap system yet, once an ap system is in place, start adding ap ratios to spells and skills
 * BUSHESSSSSS
+* Cool Resources: [Sublime Text Packages](https://github.com/bhargavrpatel/Dota-2-Sublime-Packages), [Modding Dump](https://github.com/bhargavrpatel/dota-modding-dump/tree/master/dota)
 
 Modellers and animators!
 * Work on in game assets like the jungle islands
