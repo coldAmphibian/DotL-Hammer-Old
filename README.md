@@ -14,20 +14,21 @@ Programmers
 * Start adding champions, Use wiki for stats and the conversion of 550 dota range = 750 lol range
 * No ap system yet, once an ap system is in place, start adding ap ratios to spells and skills
 * BUSHESSSSSS
-* Cool Resources: [Sublime Text Packages](https://github.com/bhargavrpatel/Dota-2-Sublime-Packages), [Modding Dump](https://github.com/bhargavrpatel/dota-modding-dump/tree/master/dota)
+* Cool Resources: [Sublime Text Packages](https://github.com/bhargavrpatel/Dota-2-Sublime-Packages), [Modding Dump](https://github.com/bhargavrpatel/dota-modding-dump/tree/master/dota),[Hero Programming](https://github.com/cris9696/DotaCustomFilesJoiner)
 
-Modellers and animators!
+Modellers/Animators!
 * Work on in game assets like the jungle islands
-* Champion models, Follow the workshop requirements for maximum good http://www.dota2.com/workshop/requirements
+* Champion models, Follow the [workshop requirements](http://www.dota2.com/workshop/requirements) for maximum good
 * Poros!
 
-Sounds
+Sounds/Music
 * Fitting music if you want to try, haven't really considered it
 * Remixes of the lol theme which fits as being not too destracting
 * Hopefully eventually we can have champion select, so music for that would be cool too
-* 
+
+Voice Acting
 * Voice acting, have a listen to all the interactions on the dota wiki to see the quality that should be aimed for
-* Rice pirate's guide to not sounding shitty https://www.youtube.com/watch?v=r90Xy9eIU8E
+* [Rice pirate's guide to not sounding shitty](https://www.youtube.com/watch?v=r90Xy9eIU8E)
 * Mandatory Voice Line List: "Here's *x* in your eye", "Good thing I have my *y* move"
 
 Artists
