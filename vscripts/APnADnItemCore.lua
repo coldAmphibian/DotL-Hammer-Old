@@ -90,7 +90,7 @@ function DealDamage(damage)
 		
 	damage.attacker	= damage.attacker or damage.caster or EntIndexToHScript(damage.caster_entindex)
 	damage.bonus_level	= GetADAPAttribute(damage.attacker,damage.Type)
-	damage.damage = damage.DamageBase + damage.bonus_level * damage.bonus_multiple
+	damage.damage = damage.DamageBase + damage.bonus_level * damage.BonusMultiple
 
 	if damage.Type == "AD" then
 		damage.damage_type = DAMAGE_TYPE_PHYSICAL
