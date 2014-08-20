@@ -56,13 +56,13 @@ In AD Items +20 AD
 ]]
 
 
-APDamage = {}
-local APDamage = APDamage
+APADDamage = {}
+local APADDamage = APADDamage
 
-setmetatable(APDamage, APDamage)
+setmetatable(APADDamage, APADDamage)
 
 
-Damage.damage_meta = {
+APADDamage.damage_meta = {
 	__index = {
 		attacker 			= nil,					-- damage source
 		victim 				= nil,					-- damage target
@@ -86,7 +86,7 @@ function DealDamage(damage)
 		print(debug.traceback 'deal damage called with no target')
 	end
 
-	setmetatable(damage, Damage.damage_meta)
+	setmetatable(damage, APADDamage.damage_meta)
 		
 	damage.attacker	= damage.attacker or damage.caster or EntIndexToHScript(damage.caster_entindex)
 	damage.bonus_level	= GetADAPAttribute(damage.attacker,damage.Type)
