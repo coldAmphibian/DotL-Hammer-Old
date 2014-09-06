@@ -2,10 +2,11 @@
 
 Layer0
 {
-	shader "ui.vfx"
-
-	F_STENCIL_MASKING 1
+	shader "global_lit_simple.vfx"
 
 	//---- Color ----
-	Texture "materials/overviews/2dlevelminimap.psd"
+	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
+	g_vTexCoordOffset "[0.000 0.000]"
+	g_vTexCoordScale "[1.000 1.000]"
+	TextureColor "materials/overviews/2dlevelminimap.psd"
 }

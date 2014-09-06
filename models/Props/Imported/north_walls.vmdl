@@ -1,0 +1,163 @@
+<!-- schema text {7e125a45-3d83-4043-b292-9e24f8ef27b4} generic {198980d8-3a93-4919-b4c6-dd1fb07a3a4b} -->
+CVModel CVModel_0
+{
+	CVmeshList m_meshList = CVmeshList
+	{
+		CVmesh[] m_meshList = 
+		[
+			CVmesh
+			{
+				string m_meshName = "north_walls"
+				string m_meshFile = "models/props/imported/fbx/north_walls.fbx"
+				string m_materialSearchPath = ""
+				bool m_bSkinParentedObjects = true
+				bool m_bExpensiveTangents = false
+				bool m_bExpensiveVertices = false
+				CVmorphInfo* m_pMorphInfo = NULL
+			}
+		]
+	}
+	CVphysicsMeshList m_physicsMeshList = CVphysicsMeshList
+	{
+		CVphysicsMesh[] m_meshList = 
+		[
+			
+		]
+	}
+	CVmodelInfo* m_pModelInfo = NULL
+	CVhitBoxSetListReference[] m_pHitBoxSetLists = 
+	[
+		CVhitBoxSetListReference
+		{
+			CVhitBoxSetList* m_pObject = &CVhitBoxSetList_0
+			string m_sFileName = ""
+		}
+	]
+	CVattachmentListReference[] m_pAttachmentLists = 
+	[
+		
+	]
+	CVanimGroupReference[] m_pAnimGroups = 
+	[
+		
+	]
+	CVNodeMaterialGroupListReference m_pMaterialGroupList = CVNodeMaterialGroupListReference
+	{
+		NodeMaterialGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVMeshGroupListReference m_pMeshGroupList = CVMeshGroupListReference
+	{
+		MeshGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVLODGroupListReference m_pLodGroupList = CVLODGroupListReference
+	{
+		LODGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVpropBreakableListReference m_pPropBreakableList = CVpropBreakableListReference
+	{
+		CVpropBreakableList* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVpropDataListReference m_pPropDataList = CVpropDataListReference
+	{
+		CVpropDataList* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVConstraintListReference[] m_pConstraintLists = 
+	[
+		
+	]
+	string m_collision = ""
+	string m_sMDLFilename = ""
+	string[] m_scriptFiles = 
+	[
+		
+	]
+	CVMaterialRemapList* m_pMaterialRemapList = &CVMaterialRemapList_0
+	float m_flFbxScale = 1.000000
+}
+
+CVhitBoxSetList CVhitBoxSetList_0
+{
+	CVhitBoxSet[] m_HitBoxSets = 
+	[
+		CVhitBoxSet
+		{
+			string m_name = "default"
+			CVhitBox[] m_HitBoxes = 
+			[
+				
+			]
+		}
+	]
+}
+
+CVMaterialRemapList CVMaterialRemapList_0
+{
+	CVMaterialRemap[] m_vMaterialRemapList = 
+	[
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#28.vmat"
+			string m_sReplaceMaterial = "materials/imported/base_north_platform.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#30.vmat"
+			string m_sReplaceMaterial = "materials/imported/base_north_arches.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#29.vmat"
+			string m_sReplaceMaterial = "materials/imported/base_north_shop.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#31.vmat"
+			string m_sReplaceMaterial = "materials/imported/base_north_walls_b.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#32.vmat"
+			string m_sReplaceMaterial = "materials/imported/base_north_walls_d.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#72.vmat"
+			string m_sReplaceMaterial = "materials/imported/base_north_walls_g.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#69.vmat"
+			string m_sReplaceMaterial = "materials/imported/struc_stairs_north_base_pali_a.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#70.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_north_base.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#74.vmat"
+			string m_sReplaceMaterial = "materials/imported/base_north_walls_f.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#36.vmat"
+			string m_sReplaceMaterial = "materials/imported/periph_north_h.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#26.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_north_base.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_base_north_platform_alpha_target_3dcuv_atlas_color_copy1.vmat"
+			string m_sReplaceMaterial = "materials/imported/base_north_platform.vmat"
+		}
+	]
+}

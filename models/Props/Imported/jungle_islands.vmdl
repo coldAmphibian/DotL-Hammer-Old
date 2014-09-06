@@ -1,0 +1,279 @@
+<!-- schema text {7e125a45-3d83-4043-b292-9e24f8ef27b4} generic {198980d8-3a93-4919-b4c6-dd1fb07a3a4b} -->
+CVModel CVModel_0
+{
+	CVmeshList m_meshList = CVmeshList
+	{
+		CVmesh[] m_meshList = 
+		[
+			CVmesh
+			{
+				string m_meshName = "jungle_islands"
+				string m_meshFile = "models/props/imported/fbx/jungle_islands.fbx"
+				string m_materialSearchPath = ""
+				bool m_bSkinParentedObjects = true
+				bool m_bExpensiveTangents = false
+				bool m_bExpensiveVertices = false
+				CVmorphInfo* m_pMorphInfo = NULL
+			}
+		]
+	}
+	CVphysicsMeshList m_physicsMeshList = CVphysicsMeshList
+	{
+		CVphysicsMesh[] m_meshList = 
+		[
+			
+		]
+	}
+	CVmodelInfo* m_pModelInfo = NULL
+	CVhitBoxSetListReference[] m_pHitBoxSetLists = 
+	[
+		
+	]
+	CVattachmentListReference[] m_pAttachmentLists = 
+	[
+		
+	]
+	CVanimGroupReference[] m_pAnimGroups = 
+	[
+		
+	]
+	CVNodeMaterialGroupListReference m_pMaterialGroupList = CVNodeMaterialGroupListReference
+	{
+		NodeMaterialGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVMeshGroupListReference m_pMeshGroupList = CVMeshGroupListReference
+	{
+		MeshGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVLODGroupListReference m_pLodGroupList = CVLODGroupListReference
+	{
+		LODGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVpropBreakableListReference m_pPropBreakableList = CVpropBreakableListReference
+	{
+		CVpropBreakableList* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVpropDataListReference m_pPropDataList = CVpropDataListReference
+	{
+		CVpropDataList* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVConstraintListReference[] m_pConstraintLists = 
+	[
+		
+	]
+	string m_collision = ""
+	string m_sMDLFilename = ""
+	string[] m_scriptFiles = 
+	[
+		
+	]
+	CVMaterialRemapList* m_pMaterialRemapList = &CVMaterialRemapList_0
+	float m_flFbxScale = 1.000000
+}
+
+CVMaterialRemapList CVMaterialRemapList_0
+{
+	CVMaterialRemap[] m_vMaterialRemapList = 
+	[
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#106.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_east_island_a.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#107.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_east_island_b.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#108.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_east_island_c.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#109.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_east_island_d.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#110.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_east_island_e.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#111.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_east_island_f.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#112.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_east_island_g.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#113.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_east_island_h.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#114.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_east_island_i.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#116.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_north_island_b.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#123.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_north_island_c.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#129.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_north_island_d.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#130.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_north_island_e.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#131.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_north_island_f.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#132.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_north_island_g.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#134.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_north_island_i.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#135.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_north_island_j.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#136.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_north_island_k.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#137.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_north_island_l.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#138.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_south_island_a.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#139.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_south_island_b.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#140.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_south_island_c.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#141.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_south_island_d.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#142.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_south_island_e.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#143.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_south_island_f.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#144.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_south_island_g.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#145.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_south_island_h.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#146.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_south_island_i.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#147.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_south_island_j.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#148.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_south_island_k.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#149.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_south_island_l.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#151.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_west_island_b.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#152.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_west_island_c.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#153.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_west_island_d.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#154.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_west_island_e.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#155.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_west_island_f.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#156.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_west_island_g.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#157.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_west_island_h.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#158.vmat"
+			string m_sReplaceMaterial = "materials/imported/jungle_west_island_i.vmat"
+		}
+	]
+}

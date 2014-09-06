@@ -1,0 +1,124 @@
+<!-- schema text {7e125a45-3d83-4043-b292-9e24f8ef27b4} generic {198980d8-3a93-4919-b4c6-dd1fb07a3a4b} -->
+CVModel CVModel_0
+{
+	CVmeshList m_meshList = CVmeshList
+	{
+		CVmesh[] m_meshList = 
+		[
+			CVmesh
+			{
+				string m_meshName = "south_walls"
+				string m_meshFile = "models/props/imported/fbx/south_walls.fbx"
+				string m_materialSearchPath = ""
+				bool m_bSkinParentedObjects = true
+				bool m_bExpensiveTangents = false
+				bool m_bExpensiveVertices = false
+				CVmorphInfo* m_pMorphInfo = NULL
+			}
+		]
+	}
+	CVphysicsMeshList m_physicsMeshList = CVphysicsMeshList
+	{
+		CVphysicsMesh[] m_meshList = 
+		[
+			
+		]
+	}
+	CVmodelInfo* m_pModelInfo = NULL
+	CVhitBoxSetListReference[] m_pHitBoxSetLists = 
+	[
+		
+	]
+	CVattachmentListReference[] m_pAttachmentLists = 
+	[
+		
+	]
+	CVanimGroupReference[] m_pAnimGroups = 
+	[
+		
+	]
+	CVNodeMaterialGroupListReference m_pMaterialGroupList = CVNodeMaterialGroupListReference
+	{
+		NodeMaterialGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVMeshGroupListReference m_pMeshGroupList = CVMeshGroupListReference
+	{
+		MeshGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVLODGroupListReference m_pLodGroupList = CVLODGroupListReference
+	{
+		LODGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVpropBreakableListReference m_pPropBreakableList = CVpropBreakableListReference
+	{
+		CVpropBreakableList* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVpropDataListReference m_pPropDataList = CVpropDataListReference
+	{
+		CVpropDataList* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVConstraintListReference[] m_pConstraintLists = 
+	[
+		
+	]
+	string m_collision = ""
+	string m_sMDLFilename = ""
+	string[] m_scriptFiles = 
+	[
+		
+	]
+	CVMaterialRemapList* m_pMaterialRemapList = &CVMaterialRemapList_0
+	float m_flFbxScale = 1.000000
+}
+
+CVMaterialRemapList CVMaterialRemapList_0
+{
+	CVMaterialRemap[] m_vMaterialRemapList = 
+	[
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#101.vmat"
+			string m_sReplaceMaterial = "materials/imported/unq_base_summoner_platform_d.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#99.vmat"
+			string m_sReplaceMaterial = "materials/imported/base_south_platform.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#91.vmat"
+			string m_sReplaceMaterial = "materials/imported/struc_stairs_base_pali_a.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#94.vmat"
+			string m_sReplaceMaterial = "materials/imported/base_south_walls_b.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#92.vmat"
+			string m_sReplaceMaterial = "materials/imported/base_south_walls_d.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#102.vmat"
+			string m_sReplaceMaterial = "materials/imported/base_south_walls_f.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#95.vmat"
+			string m_sReplaceMaterial = "materials/imported/base_south_walls_c.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "material_#90.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_south_base.vmat"
+		}
+	]
+}
