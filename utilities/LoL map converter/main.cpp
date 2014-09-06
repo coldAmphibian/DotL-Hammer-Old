@@ -410,7 +410,7 @@ int main(int argc, char** argv) {
                         << (nvr_struct.index_lists[XFile_index_index].indices[j + 2] - XFile_vertex_offset) << ";;\n\n";
             }
         }
-        //noramls
+        //normals
         ssXFile << " MeshNormals {\n  " << XFile_vertex_length << ";\n";
         for (int j = XFile_vertex_offset; j < XFile_vertex_offset + XFile_vertex_length; j++) {
             if (j < XFile_vertex_offset + XFile_vertex_length - 1) {
