@@ -14,6 +14,7 @@
 #include <math.h>
 #include <float.h>
 #include <iomanip>
+#include <regex>
 
 using namespace std;
 
