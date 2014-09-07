@@ -97,6 +97,10 @@ public:
 
 nvr_struct_class nvr_struct;
 char * nvr_data;
+std::regex rx("jungle.*island_a");
+
+void check_name(string name);
+bool _CFR(float f);
 
 void _ReadNext(char *buffer, int bytes, bool seek = false);
 string _MemToString(char *buffer);
@@ -175,6 +179,7 @@ int main(int argc, const char** argv) {
     for (int i = 0; i < nvr_struct.count_material; i++) {
         _ReadNext(buffer_256, 256);
         nvr_struct.materials[i].name = _MemToString(buffer_256); //name (256 byte char array)
+        check_name(nvr_struct.materials[i].name);
         _ReadNext(buffer_4, 4);
         nvr_struct.materials[i].emissive_color[0] = _MemToFloat(buffer_4); //emissive color Red (4 byte float)
         _ReadNext(buffer_4, 4);
@@ -191,17 +196,19 @@ int main(int argc, const char** argv) {
         nvr_struct.materials[i].blend_color[3] = _MemToFloat(buffer_4); //blend color Blue (4 byte float)
         _ReadNext(buffer_336, 336);
         nvr_struct.materials[i].texture_filename = _MemToString(buffer_336); //texture file name (336 byte char array)
+        check_name(nvr_struct.materials[i].texture_filename);
         _ReadNext(buffer_4, 4);
         nvr_struct.materials[i].opacity = _MemToFloat(buffer_4); //opacity (4 byte float)
         _ReadNext(buffer_2364, 2364);
         nvr_struct.materials[i].blend_filename = _MemToString(buffer_2364); //blend file name (2364 byte char array)
+        check_name(nvr_struct.materials[i].blend_filename);
         nvr_struct.materials[i].used = 0; //used 0 times (reset)
     }
     cout << "Finished }\n";
 
 
     //get vertex list
-    _PrintStart("vertex_lists",nvr_struct.count_vertex_list);
+    _PrintStart("vertex_lists", nvr_struct.count_vertex_list);
     nvr_struct.vertex_lists = new nvr_vertexlist_struct_class[nvr_struct.count_vertex_list];
 
     for (int i = 0; i < nvr_struct.count_vertex_list; i++) {
@@ -223,28 +230,32 @@ int main(int argc, const char** argv) {
         temp_values[3] = _MemToInt(buffer_4);
         _ReadNext(NULL, -40, true);
 
+        cout << "Size: " << temp_size << "|| 0: " << temp_values[0] << " 1: " << temp_values[1] << " 2: " << temp_values[2] << " 3: " << temp_values[3] << "\n";
+
         if (temp_size / 36 * 36 == temp_size && temp_values[0] <= 1 && temp_values[1] <= 1 && temp_values[2] <= 1) {
             nvr_struct.vertex_lists[i].size = temp_size / 36;
             nvr_struct.vertex_lists[i].type = 1;
-        } else
-            if ((temp_values[3] == 0xFF7F7F7F) || (temp_values[3] == 0xFF16191E)) {
+        } else if ((temp_values[3] == 0xFF7F7F7F) || (temp_values[3] == 0xFF16191E)) {
             nvr_struct.vertex_lists[i].size = temp_size / 40;
             nvr_struct.vertex_lists[i].type = 2;
         } else {
             nvr_struct.vertex_lists[i].size = temp_size / 12;
             nvr_struct.vertex_lists[i].type = 0;
         }
+        cout << "\tType: " << nvr_struct.vertex_lists[i].type << " Size: " << nvr_struct.vertex_lists[i].size << "\n";
 
         nvr_struct.vertex_lists[i].vertices = new nvr_vertex[nvr_struct.vertex_lists[i].size];
 
+        string name = nvr_struct.materials[i].name;
+        float p0, p1, p2;
         if (nvr_struct.vertex_lists[i].type > 0) {
             for (int j = 0; j < nvr_struct.vertex_lists[i].size; j++) {
                 _ReadNext(buffer_4, 4);
-                nvr_struct.vertex_lists[i].vertices[j].position[0] = _MemToFloat(buffer_4); //x position of current vertex
+                p0 = nvr_struct.vertex_lists[i].vertices[j].position[0] = _MemToFloat(buffer_4); //x position of current vertex
                 _ReadNext(buffer_4, 4);
-                nvr_struct.vertex_lists[i].vertices[j].position[1] = _MemToFloat(buffer_4); //y position of current vertex
+                p1 = nvr_struct.vertex_lists[i].vertices[j].position[1] = _MemToFloat(buffer_4); //y position of current vertex
                 _ReadNext(buffer_4, 4);
-                nvr_struct.vertex_lists[i].vertices[j].position[2] = _MemToFloat(buffer_4); //z position of current vertex
+                p2 = nvr_struct.vertex_lists[i].vertices[j].position[2] = _MemToFloat(buffer_4); //z position of current vertex
                 _ReadNext(buffer_4, 4);
                 nvr_struct.vertex_lists[i].vertices[j].normals[0] = _MemToFloat(buffer_4); //x component of normal on current vertex
                 _ReadNext(buffer_4, 4);
@@ -258,22 +269,32 @@ int main(int argc, const char** argv) {
                 _ReadNext(buffer_4, 4);
                 nvr_struct.vertex_lists[i].vertices[j].unknown = _MemToInt(buffer_4); //unknown value
                 if (nvr_struct.vertex_lists[i].type == 2) _ReadNext(buffer_4, 4);
+                if (_CFR(p0) || _CFR(p1) || _CFR(p2)) {
+                    cout << "BCF " << j << "| " << name
+                            << " | (type " << nvr_struct.vertex_lists[i].type
+                            << ") - x " << p0 << ", y " << p1 << ", z " << p2 << "\n";
+                }
             }
         } else {
             for (int j = 0; j < nvr_struct.vertex_lists[i].size; j++) {
                 _ReadNext(buffer_4, 4);
-                nvr_struct.vertex_lists[i].vertices[j].position[0] = _MemToFloat(buffer_4); //x position of current vertex
+                p0 = nvr_struct.vertex_lists[i].vertices[j].position[0] = _MemToFloat2(buffer_4); //x position of current vertex
                 _ReadNext(buffer_4, 4);
-                nvr_struct.vertex_lists[i].vertices[j].position[1] = _MemToFloat(buffer_4); //y position of current vertex
+                p1 = nvr_struct.vertex_lists[i].vertices[j].position[1] = _MemToFloat2(buffer_4); //y position of current vertex
                 _ReadNext(buffer_4, 4);
-                nvr_struct.vertex_lists[i].vertices[j].position[2] = _MemToFloat(buffer_4); //z position of current vertex
+                p2 = nvr_struct.vertex_lists[i].vertices[j].position[2] = _MemToFloat2(buffer_4); //z position of current vertex
+                if (_CFR(p0) || _CFR(p1) || _CFR(p2)) {
+                    cout << "BCF " << j << "| " << name
+                            << " | (type " << nvr_struct.vertex_lists[i].type
+                            << ") - x " << p0 << ", y " << p1 << ", z " << p2 << "\n";
+                }
             }
         }
     }
     cout << "Finished }\n";
 
     //get index list
-    _PrintStart("index_lists",nvr_struct.count_index_list);
+    _PrintStart("index_lists", nvr_struct.count_index_list);
     nvr_struct.index_lists = new nvr_indexlist_struct_class[nvr_struct.count_index_list];
 
     for (int i = 0; i < nvr_struct.count_index_list; i++) {
@@ -348,10 +369,20 @@ int main(int argc, const char** argv) {
     return 0;
 }
 
+void check_name(string name) {
+    if (regex_search(name.begin(), name.end(), rx)) {
+        cout << "FOUND A MATERIAL!!!! :>" << name << "\n";
+    }
+}
+
+bool _CFR(float f) { // CheckFloatRange
+    return f < -10000000000000000 || f > 10000000000000000;
+}
+
 void _PrintStart(string name, int count) {
     stringstream ss;
     ss << name << "[" << count << "]";
-    
+
     printf("  %-40s{ Processing... ", ss.str().c_str());
 }
 
@@ -413,11 +444,6 @@ string _GenHeader() {
     ss << "#                                                               #\n";
     ss << "#   https://github.com/coldAmphibian/DotL-Hammer                #\n";
     ss << "#                                                               #\n";
-    ss << "# The code used to generate this file is based on the code      #\n";
-    ss << "#   avaliable here:                                             #\n";
-    ss << "#                                                               #\n";
-    ss << "#   http://forum.xentax.com/viewtopic.php?p=92650#p92650        #\n";
-    ss << "#                                                               #\n";
     ss << "#################################################################\n";
     ss << "\n\n\n";
 
@@ -448,7 +474,7 @@ void _SaveData(nvr_struct_class nvr_struct, int i) {
             << nvr_struct.materials[nvr_struct.models[i].material].used
             << ".mtl";
     string mtl_name = mtl_file_name_ss.str();
-    
+
 
     nvr_struct.materials[nvr_struct.models[i].material].used += 1;
 
@@ -459,10 +485,9 @@ void _SaveData(nvr_struct_class nvr_struct, int i) {
     // Sets Float precision
     ssXFile << fixed << showpoint << setprecision(6);
 
-    ssXFile << "mtllib " << mtl_name;
-    ssXFile << "usemtl " << nvr_struct.materials[nvr_struct.models[i].material].name;
-    
-    ssXFile << "# List of vertices\n";
+    ssXFile << "mtllib " << mtl_name << "\n";
+
+    ssXFile << "\n\n# Vertices: " << XFile_vertex_length << "\n";
 
     for (int j = XFile_vertex_offset; j < XFile_vertex_offset + XFile_vertex_length; j++) {
         nvr_vertex v = nvr_struct.vertex_lists[XFile_vertex_index].vertices[j];
@@ -470,17 +495,25 @@ void _SaveData(nvr_struct_class nvr_struct, int i) {
                 << v.position[1] << " "
                 << v.position[2] << "\n";
     }
-    ssXFile << "# List of vertex normals\n";
+    ssXFile << "# End Vertices: " << XFile_vertex_length << "\n";
+
+    ssXFile << "\n\n# Vertex Normals: " << XFile_index_length << "\n";
     for (int j = XFile_vertex_offset; j < XFile_vertex_offset + XFile_vertex_length; j++) {
         ssXFile << "vn " << nvr_struct.vertex_lists[XFile_vertex_index].vertices[j].normals[0] << " "
                 << nvr_struct.vertex_lists[XFile_vertex_index].vertices[j].normals[1] << " "
                 << nvr_struct.vertex_lists[XFile_vertex_index].vertices[j].normals[2] << "\n";
     }
+    ssXFile << "# End Vertex Normals: " << XFile_index_length << "\n";
     //texture coordinates
+
+    ssXFile << "\n\n# UV: " << XFile_index_length << "\n";
     for (int j = XFile_vertex_offset; j < XFile_vertex_offset + XFile_vertex_length; j++) {
         ssXFile << "vt " << nvr_struct.vertex_lists[XFile_vertex_index].vertices[j].uv[0] << " "
-                << nvr_struct.vertex_lists[XFile_vertex_index].vertices[j].uv[1] << "\n";
+                << (1 - nvr_struct.vertex_lists[XFile_vertex_index].vertices[j].uv[1]) << "\n";
     }
+    ssXFile << "\n\n# End UV: " << XFile_index_length << "\n";
+
+    ssXFile << "usemtl " << nvr_struct.materials[nvr_struct.models[i].material].name << "\n";
     //indices for positions
     for (int j = XFile_index_offset; j < XFile_index_offset + XFile_index_length; j += 3) {
         // F**k you 1 indexing.
