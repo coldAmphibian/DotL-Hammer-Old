@@ -4,6 +4,9 @@ Layer0
 {
 	shader "global_lit_simple.vfx"
 
+	//---- Fullbright ----
+	F_FULLBRIGHT 1
+
 	//---- Color ----
 	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
 	g_vTexCoordOffset "[0.000 0.000]"

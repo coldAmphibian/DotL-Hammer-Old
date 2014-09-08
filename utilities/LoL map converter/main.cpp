@@ -1,10 +1,10 @@
 /*
- * The code in this file is derived from the code avaliable: 
+ * The code in this file is derived from the code avaliable:
  *   http://forum.xentax.com/viewtopic.php?p=92650#p92650
- * 
- * The code has been modified to produce `.obj` and `.mtl` files in a platform 
+ *
+ * The code has been modified to produce `.obj` and `.mtl` files in a platform
  *  independent manner.
- * 
+ *
  */
 #include <iostream>
 #include <fstream>
@@ -125,7 +125,7 @@ int main(int argc, const char** argv) {
     } else {
         file = "room.nvr";
     }
-    
+
     cout << "LoL Map Converter\n";
     cout << "=================\n\n";
     cout << "This program is about to load and convert the following file: \n";
