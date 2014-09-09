@@ -23,7 +23,7 @@ public:
     float position[3];
     float normals[3];
     float uv[2];
-    int unknown;
+//    int unknown;
 };
 
 class nvr_material_struct_class {
@@ -97,10 +97,40 @@ public:
 
 nvr_struct_class nvr_struct;
 char * nvr_data;
-std::regex rx("jungle.*island_a");
+static int pos = 0;
+//std::regex rx("jungle.*island_a");
 
 void check_name(string name);
-bool _CFR(float f);
+
+bool _CFR(float f) { // CheckFloatRange
+    return f < -10000000000000000 || f > 10000000000000000;
+}
+
+string byte_to_binary(char x)
+{
+    string b = "";
+    for (int z = 128; z > 0; z >>= 1) {
+        b += ((x & z) == z) ? "1" : "0";
+    }
+    return b;
+}
+
+void print_data(char* buf, int len){
+    cout << "(" << len << ")     ";
+    for(int i = 0; i < len; i++) {
+        cout << byte_to_binary(buf[i]) << " ";
+    }
+    cout << "|\n";
+}
+
+void print_data_r(char* buf, int len){
+    cout << "(" << len << ") (S) ";
+    for(int i = len - 1; i >= 0; i--) {
+        cout << byte_to_binary(buf[i]) << " ";
+    }
+    cout << "|\n";
+}
+
 
 void _ReadNext(char *buffer, int bytes, bool seek = false);
 string _MemToString(char *buffer);
@@ -117,7 +147,8 @@ void _SaveData(nvr_struct_class nvr_struct, int i);
 float round(float r, int places);
 
 int main(int argc, const char** argv) {
-
+    bool magic_values;
+    bool zeros_all;
     const char* file;
 
     if (argc >= 2) {
@@ -212,67 +243,83 @@ int main(int argc, const char** argv) {
     nvr_struct.vertex_lists = new nvr_vertexlist_struct_class[nvr_struct.count_vertex_list];
 
     for (int i = 0; i < nvr_struct.count_vertex_list; i++) {
+        cout << "\nStart: " << pos << "\n";
         _ReadNext(buffer_4, 4);
         int temp_size = _MemToInt(buffer_4); //size of current vertex list
+        print_data(buffer_4, 4);
         int temp_values[4];
 
 
         _ReadNext(NULL, 12, true);
         _ReadNext(buffer_4, 4);
         temp_values[0] = _MemToFloat(buffer_4);
+        print_data_r(buffer_4, 4);
         _ReadNext(buffer_4, 4);
         temp_values[1] = _MemToFloat(buffer_4);
+        print_data_r(buffer_4, 4);
         _ReadNext(buffer_4, 4);
         temp_values[2] = _MemToFloat(buffer_4);
-
+        print_data_r(buffer_4, 4);
+// a1 3c 6c bd
+// dc 72 69 3c
+// 40 8c 7f bf
         _ReadNext(NULL, 12, true);
         _ReadNext(buffer_4, 4);
         temp_values[3] = _MemToInt(buffer_4);
+        print_data(buffer_4, 4);
         _ReadNext(NULL, -40, true);
 
         cout << "Size: " << temp_size << "|| 0: " << temp_values[0] << " 1: " << temp_values[1] << " 2: " << temp_values[2] << " 3: " << temp_values[3] << "\n";
 
-        if (temp_size / 36 * 36 == temp_size && temp_values[0] <= 1 && temp_values[1] <= 1 && temp_values[2] <= 1) {
-            nvr_struct.vertex_lists[i].size = temp_size / 36;
-            nvr_struct.vertex_lists[i].type = 1;
-        } else if ((temp_values[3] == 0xFF7F7F7F) || (temp_values[3] == 0xFF16191E)) {
+        magic_values = (temp_values[3] == 0xFF7F7F7F) || (temp_values[3] == 0xFF16191E);
+        zeros_all = temp_values[0] <= 1 && temp_values[1] <= 1 && temp_values[2] <= 1;
+        
+        if (magic_values && zeros_all) {
             nvr_struct.vertex_lists[i].size = temp_size / 40;
             nvr_struct.vertex_lists[i].type = 2;
+        } else if (temp_size / 36 * 36 == temp_size && zeros_all) {
+            nvr_struct.vertex_lists[i].size = temp_size / 36;
+            nvr_struct.vertex_lists[i].type = 1;
         } else {
             nvr_struct.vertex_lists[i].size = temp_size / 12;
             nvr_struct.vertex_lists[i].type = 0;
         }
-        cout << "\tType: " << nvr_struct.vertex_lists[i].type << " Size: " << nvr_struct.vertex_lists[i].size << "\n";
+        cout << "\tType: " << nvr_struct.vertex_lists[i].type << " Size: " << nvr_struct.vertex_lists[i].size << "\n\n";
+        
 
         nvr_struct.vertex_lists[i].vertices = new nvr_vertex[nvr_struct.vertex_lists[i].size];
 
-        string name = nvr_struct.materials[i].name;
+        cout << "\tName: " << nvr_struct.materials[i].name << "; Idx: " << i << "\n";
         float p0, p1, p2;
         if (nvr_struct.vertex_lists[i].type > 0) {
             for (int j = 0; j < nvr_struct.vertex_lists[i].size; j++) {
                 _ReadNext(buffer_4, 4);
-                p0 = nvr_struct.vertex_lists[i].vertices[j].position[0] = _MemToFloat(buffer_4); //x position of current vertex
+                p0 = nvr_struct.vertex_lists[i].vertices[j].position[0] = _MemToFloat2(buffer_4); //x position of current vertex
                 _ReadNext(buffer_4, 4);
-                p1 = nvr_struct.vertex_lists[i].vertices[j].position[1] = _MemToFloat(buffer_4); //y position of current vertex
+                p1 = nvr_struct.vertex_lists[i].vertices[j].position[1] = _MemToFloat2(buffer_4); //y position of current vertex
                 _ReadNext(buffer_4, 4);
-                p2 = nvr_struct.vertex_lists[i].vertices[j].position[2] = _MemToFloat(buffer_4); //z position of current vertex
+                p2 = nvr_struct.vertex_lists[i].vertices[j].position[2] = _MemToFloat2(buffer_4); //z position of current vertex
                 _ReadNext(buffer_4, 4);
-                nvr_struct.vertex_lists[i].vertices[j].normals[0] = _MemToFloat(buffer_4); //x component of normal on current vertex
+                nvr_struct.vertex_lists[i].vertices[j].normals[0] = _MemToFloat2(buffer_4); //x component of normal on current vertex
                 _ReadNext(buffer_4, 4);
-                nvr_struct.vertex_lists[i].vertices[j].normals[1] = _MemToFloat(buffer_4); //y component of normal on current vertex
+                nvr_struct.vertex_lists[i].vertices[j].normals[1] = _MemToFloat2(buffer_4); //y component of normal on current vertex
                 _ReadNext(buffer_4, 4);
-                nvr_struct.vertex_lists[i].vertices[j].normals[2] = _MemToFloat(buffer_4); //z component of normal on current vertex
+                nvr_struct.vertex_lists[i].vertices[j].normals[2] = _MemToFloat2(buffer_4); //z component of normal on current vertex
                 _ReadNext(buffer_4, 4);
-                nvr_struct.vertex_lists[i].vertices[j].uv[0] = _MemToFloat(buffer_4); //u coordinate on texture
+                // Known problem with UVs being infinity.
+                nvr_struct.vertex_lists[i].vertices[j].uv[0] = _MemToFloat2(buffer_4); //u coordinate on texture
                 _ReadNext(buffer_4, 4);
-                nvr_struct.vertex_lists[i].vertices[j].uv[1] = _MemToFloat(buffer_4); //v coordinate on texture
-                _ReadNext(buffer_4, 4);
-                nvr_struct.vertex_lists[i].vertices[j].unknown = _MemToInt(buffer_4); //unknown value
-                if (nvr_struct.vertex_lists[i].type == 2) _ReadNext(buffer_4, 4);
+                nvr_struct.vertex_lists[i].vertices[j].uv[1] = _MemToFloat2(buffer_4); //v coordinate on texture
+                _ReadNext(buffer_4, 4); //unknown value
+//                nvr_struct.vertex_lists[i].vertices[j].unknown = _MemToInt(buffer_4);
+                if (nvr_struct.vertex_lists[i].type == 2) {
+                    _ReadNext(buffer_4, 4);
+                }
                 if (_CFR(p0) || _CFR(p1) || _CFR(p2)) {
-                    cout << "BCF " << j << "| " << name
+                    cout << "BCF " << j << "(" << pos << ")" << "| " << nvr_struct.materials[i].name
                             << " | (type " << nvr_struct.vertex_lists[i].type
                             << ") - x " << p0 << ", y " << p1 << ", z " << p2 << "\n";
+                    return -1;
                 }
             }
         } else {
@@ -284,7 +331,7 @@ int main(int argc, const char** argv) {
                 _ReadNext(buffer_4, 4);
                 p2 = nvr_struct.vertex_lists[i].vertices[j].position[2] = _MemToFloat2(buffer_4); //z position of current vertex
                 if (_CFR(p0) || _CFR(p1) || _CFR(p2)) {
-                    cout << "BCF " << j << "| " << name
+                    cout << "BCF " << j << "| " << nvr_struct.materials[i].name
                             << " | (type " << nvr_struct.vertex_lists[i].type
                             << ") - x " << p0 << ", y " << p1 << ", z " << p2 << "\n";
                 }
@@ -370,13 +417,9 @@ int main(int argc, const char** argv) {
 }
 
 void check_name(string name) {
-    if (regex_search(name.begin(), name.end(), rx)) {
-        cout << "FOUND A MATERIAL!!!! :>" << name << "\n";
-    }
-}
-
-bool _CFR(float f) { // CheckFloatRange
-    return f < -10000000000000000 || f > 10000000000000000;
+    //    if (regex_search(name.begin(), name.end(), rx)) {
+    //        cout << "FOUND A MATERIAL!!!! :>" << name << "\n";
+    //    }
 }
 
 void _PrintStart(string name, int count) {
@@ -387,7 +430,6 @@ void _PrintStart(string name, int count) {
 }
 
 void _ReadNext(char *buffer, int bytes, bool seek) {
-    static int pos = 0;
 
     if (!seek) {
         for (int i = 0; i < bytes; i++) {
@@ -401,7 +443,7 @@ void _ReadNext(char *buffer, int bytes, bool seek) {
 
 string _MemToString(char *buffer) {
     // This method may cause segfaults. I hope that it doesn't.
-    string ret = buffer;
+    string ret(buffer);
     return ret;
 }
 
@@ -414,16 +456,28 @@ unsigned int _MemToInt(char *buffer) {
 }
 
 float _MemToFloat2(char *buffer) {
-    int full = ((0xFF000000 & (buffer[3] << 24)) | (0x00FF0000 & (buffer[2] << 16)) | (0x0000FF00 & (buffer[1] << 8)) | (0x000000FF & buffer[0]));
-    int sign = 0x00000001 & (full >> 31);
-    int exponent = 0x000000FF & (full >> 23);
-    int mantissa = 0x007FFFFF & full;
-    float ret = round(pow(-1.0f, sign)*(1.0 + ((float) mantissa) / 8388608) * pow(2.0f, exponent - 127), 6);
-
-    if (!isfinite(ret)) {
-        ret = 0;
-    } //catch NaN and infinite
-    return ret;
+    //    int full = ((0xFF000000 & (buffer[3] << 24)) | (0x00FF0000 & (buffer[2] << 16)) | (0x0000FF00 & (buffer[1] << 8)) | (0x000000FF & buffer[0]));
+    //    int sign = 0x00000001 & (full >> 31);
+    //    int exponent = 0x000000FF & (full >> 23);
+    //    int mantissa = 0x007FFFFF & full;
+    //    float ret = round(pow(-1.0f, sign)*(1.0 + ((float) mantissa) / 8388608) * pow(2.0f, exponent - 127), 6);
+    //
+    //    if (!isfinite(ret)) {
+    //        ret = 0;
+    //    } //catch NaN and infinite
+    //    return ret;
+    float f = _MemToFloat(buffer);
+    if (_CFR(f)) {
+        cout << "Failed for " << pos - 4 << " next bytes" << f << "\n";
+        cout << "Bytes: " << ((int) buffer[0]) << "|" << ((int) buffer[1]) << "|" << ((int) buffer[2]) << "|" << ((int) buffer[3]) << "|\n";
+        print_data_r(buffer, 4);
+        //_ReadNext(buffer, 4);
+        f = _MemToFloat(buffer);
+        if (_CFR(f)) {
+            return 4.20420;
+        }
+    }
+    return f;
 }
 
 float _MemToFloat(char *buffer) {

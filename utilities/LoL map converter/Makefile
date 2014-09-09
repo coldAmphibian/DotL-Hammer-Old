@@ -1,8 +1,8 @@
 
 CLANG_PP=clang++
 
-CLANG_PP_COMPILE_OPTS=-std=c++11
-CLANG_PP_LINK_OPTS=
+CLANG_PP_COMPILE_OPTS=-std=c++11 -g -O0
+CLANG_PP_LINK_OPTS=-std=c++11 -g -O0
 
 
 build: mapConverter
