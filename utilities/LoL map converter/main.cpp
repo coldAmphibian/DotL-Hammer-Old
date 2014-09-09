@@ -284,21 +284,21 @@ int main(int argc, const char** argv) {
             nvr_struct.vertex_lists[i].size = temp_size / 12;
             nvr_struct.vertex_lists[i].type = 0;
         }
-        cout << "\tType: " << nvr_struct.vertex_lists[i].type << " Size: " << nvr_struct.vertex_lists[i].size << "\n\n";
+        cout << "\tType: " << nvr_struct.vertex_lists[i].type << " Size: " << nvr_struct.vertex_lists[i].size << "\n";
         
 
         nvr_struct.vertex_lists[i].vertices = new nvr_vertex[nvr_struct.vertex_lists[i].size];
 
-        cout << "\tName: " << nvr_struct.materials[i].name << "; Idx: " << i << "\n";
+        cout << "\tIdx: " << i << "\n\n";
         float p0, p1, p2;
         if (nvr_struct.vertex_lists[i].type > 0) {
             for (int j = 0; j < nvr_struct.vertex_lists[i].size; j++) {
                 _ReadNext(buffer_4, 4);
-                p0 = nvr_struct.vertex_lists[i].vertices[j].position[0] = _MemToFloat2(buffer_4); //x position of current vertex
+                nvr_struct.vertex_lists[i].vertices[j].position[0] = _MemToFloat2(buffer_4); //x position of current vertex
                 _ReadNext(buffer_4, 4);
-                p1 = nvr_struct.vertex_lists[i].vertices[j].position[1] = _MemToFloat2(buffer_4); //y position of current vertex
+                nvr_struct.vertex_lists[i].vertices[j].position[1] = _MemToFloat2(buffer_4); //y position of current vertex
                 _ReadNext(buffer_4, 4);
-                p2 = nvr_struct.vertex_lists[i].vertices[j].position[2] = _MemToFloat2(buffer_4); //z position of current vertex
+                nvr_struct.vertex_lists[i].vertices[j].position[2] = _MemToFloat2(buffer_4); //z position of current vertex
                 _ReadNext(buffer_4, 4);
                 nvr_struct.vertex_lists[i].vertices[j].normals[0] = _MemToFloat2(buffer_4); //x component of normal on current vertex
                 _ReadNext(buffer_4, 4);
@@ -315,26 +315,15 @@ int main(int argc, const char** argv) {
                 if (nvr_struct.vertex_lists[i].type == 2) {
                     _ReadNext(buffer_4, 4);
                 }
-                if (_CFR(p0) || _CFR(p1) || _CFR(p2)) {
-                    cout << "BCF " << j << "(" << pos << ")" << "| " << nvr_struct.materials[i].name
-                            << " | (type " << nvr_struct.vertex_lists[i].type
-                            << ") - x " << p0 << ", y " << p1 << ", z " << p2 << "\n";
-                    return -1;
-                }
             }
         } else {
             for (int j = 0; j < nvr_struct.vertex_lists[i].size; j++) {
                 _ReadNext(buffer_4, 4);
-                p0 = nvr_struct.vertex_lists[i].vertices[j].position[0] = _MemToFloat2(buffer_4); //x position of current vertex
+                nvr_struct.vertex_lists[i].vertices[j].position[0] = _MemToFloat2(buffer_4); //x position of current vertex
                 _ReadNext(buffer_4, 4);
-                p1 = nvr_struct.vertex_lists[i].vertices[j].position[1] = _MemToFloat2(buffer_4); //y position of current vertex
+                nvr_struct.vertex_lists[i].vertices[j].position[1] = _MemToFloat2(buffer_4); //y position of current vertex
                 _ReadNext(buffer_4, 4);
-                p2 = nvr_struct.vertex_lists[i].vertices[j].position[2] = _MemToFloat2(buffer_4); //z position of current vertex
-                if (_CFR(p0) || _CFR(p1) || _CFR(p2)) {
-                    cout << "BCF " << j << "| " << nvr_struct.materials[i].name
-                            << " | (type " << nvr_struct.vertex_lists[i].type
-                            << ") - x " << p0 << ", y " << p1 << ", z " << p2 << "\n";
-                }
+                nvr_struct.vertex_lists[i].vertices[j].position[2] = _MemToFloat2(buffer_4); //z position of current vertex
             }
         }
     }
@@ -443,7 +432,7 @@ void _ReadNext(char *buffer, int bytes, bool seek) {
 
 string _MemToString(char *buffer) {
     // This method may cause segfaults. I hope that it doesn't.
-    string ret(buffer);
+    string ret = buffer;
     return ret;
 }
 
@@ -534,6 +523,8 @@ void _SaveData(nvr_struct_class nvr_struct, int i) {
 
     cout << "Converting Model " << i << "/" << nvr_struct.count_model << "          " << obj_file_name << "\n";
 
+    cout << "\tIdx: " << XFile_vertex_index << " Off:" << XFile_vertex_offset << " Len:" << XFile_vertex_length << "\n";
+    
 
     stringstream ssXFile;
     // Sets Float precision
