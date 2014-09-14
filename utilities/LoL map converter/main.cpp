@@ -485,11 +485,15 @@ void _SaveData(nvr_struct_class nvr_struct, int i) {
 			<< nvr_struct.vertex_lists[XFile_vertex_index].vertices[j].uv[1] << "\n";
 	}
 	//indices for positions
+
+	//starts counting how many points are defined... IDK why I called it facecount but it fixes problems
+	int faceCount = 0;
+
 	for (int j = XFile_index_offset; j < XFile_index_offset + XFile_index_length; j += 3) {
 		// F**k you 1 indexing.
-		ssXFile << "f " << (1 + nvr_struct.index_lists[XFile_index_index].indices[j] - XFile_vertex_offset) << " "
-			<< (1 + nvr_struct.index_lists[XFile_index_index].indices[j + 1] - XFile_vertex_offset) << " "
-			<< (1 + nvr_struct.index_lists[XFile_index_index].indices[j + 2] - XFile_vertex_offset) << "\n";
+		ssXFile << "f " << (1 + nvr_struct.index_lists[XFile_index_index].indices[j] - XFile_vertex_offset) << "/" << to_string(++faceCount) << " "
+			<< (1 + nvr_struct.index_lists[XFile_index_index].indices[j + 1] - XFile_vertex_offset) << "/" << to_string(++faceCount) << " "
+			<< (1 + nvr_struct.index_lists[XFile_index_index].indices[j + 2] - XFile_vertex_offset) << "/" << to_string(++faceCount) << "\n";
 	}
 
 	//save to file
