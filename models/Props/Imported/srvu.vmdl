@@ -1,0 +1,820 @@
+<!-- schema text {7e125a45-3d83-4043-b292-9e24f8ef27b4} generic {198980d8-3a93-4919-b4c6-dd1fb07a3a4b} -->
+CVModel CVModel_0
+{
+	CVmeshList m_meshList = CVmeshList
+	{
+		CVmesh[] m_meshList = 
+		[
+			CVmesh
+			{
+				string m_meshName = "srvu"
+				string m_meshFile = "models/props/imported/fbx/srvu.fbx"
+				string m_materialSearchPath = ""
+				bool m_bSkinParentedObjects = true
+				bool m_bExpensiveTangents = false
+				bool m_bExpensiveVertices = false
+				CVmorphInfo* m_pMorphInfo = NULL
+			}
+		]
+	}
+	CVphysicsMeshList m_physicsMeshList = CVphysicsMeshList
+	{
+		CVphysicsMesh[] m_meshList = 
+		[
+			
+		]
+	}
+	CVmodelInfo* m_pModelInfo = NULL
+	CVhitBoxSetListReference[] m_pHitBoxSetLists = 
+	[
+		
+	]
+	CVattachmentListReference[] m_pAttachmentLists = 
+	[
+		
+	]
+	CVanimGroupReference[] m_pAnimGroups = 
+	[
+		
+	]
+	CVNodeMaterialGroupListReference m_pMaterialGroupList = CVNodeMaterialGroupListReference
+	{
+		NodeMaterialGroupList_t* m_pObject = &NodeMaterialGroupList_t_0
+		string m_sFileName = ""
+	}
+	CVMeshGroupListReference m_pMeshGroupList = CVMeshGroupListReference
+	{
+		MeshGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVLODGroupListReference m_pLodGroupList = CVLODGroupListReference
+	{
+		LODGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVpropBreakableListReference m_pPropBreakableList = CVpropBreakableListReference
+	{
+		CVpropBreakableList* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVpropDataListReference m_pPropDataList = CVpropDataListReference
+	{
+		CVpropDataList* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVConstraintListReference[] m_pConstraintLists = 
+	[
+		
+	]
+	string m_collision = ""
+	string m_sMDLFilename = ""
+	string[] m_scriptFiles = 
+	[
+		
+	]
+	CVMaterialRemapList* m_pMaterialRemapList = &CVMaterialRemapList_0
+	float m_flFbxScale = 1.000000
+}
+
+NodeMaterialGroupList_t NodeMaterialGroupList_t_0
+{
+	NodeMaterialGroup_t[] m_materialGroups = 
+	[
+		NodeMaterialGroup_t
+		{
+			string m_name = "default"
+			string[] m_materialList = 
+			[
+				"materials/imported/base_north_arches.vmat",
+				"materials/imported/_chunk_base_north_platform_alpha_3dcuv_atlas_color.vmat",
+				"materials/imported/_chunk_base_north_shop_alpha_3dcuv_atlas_color.vmat",
+				"_chunk_base_north_walls_b_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_base_north_walls_d_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_base_north_walls_f_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_base_north_walls_g_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_base_south_platform_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_base_south_walls_b_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_base_south_walls_c_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_base_south_walls_d_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_base_south_walls_f_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_east_island_a_alpha_target_3dcuv_atlas_color_copy20.vmat",
+				"_chunk_jungle_east_island_b_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_east_island_c_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_east_island_d_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_east_island_e_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_east_island_f_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_east_island_g_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_east_island_h_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_east_island_i_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_north_island_a_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_north_island_b_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_north_island_c_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_north_island_d_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_north_island_e_alpha_target_3dcuv_atlas_color_copy20.vmat",
+				"_chunk_jungle_north_island_f_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_north_island_g_alpha_target_3dcuv_atlas_color_copy20.vmat",
+				"_chunk_jungle_north_island_h_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_north_island_i_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_north_island_j_alpha_target_3dcuv_atlas_color_copy1.vmat",
+				"_chunk_jungle_north_island_k_alpha_target_3dcuv_atlas_color_copy20.vmat",
+				"_chunk_jungle_north_island_l_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_south_island_a_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_south_island_b_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_south_island_c_alpha_target_3dcuv_atlas_color_copy40.vmat",
+				"_chunk_jungle_south_island_d_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_south_island_e_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_south_island_f_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_south_island_g_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_south_island_h_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_south_island_i_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_south_island_j_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_south_island_k_alpha_target_3dcuv_atlas_color_copy20.vmat",
+				"_chunk_jungle_south_island_l_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_west_island_a_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_west_island_b_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_west_island_c_alpha_target_3dcuv_atlas_color_copy20.vmat",
+				"_chunk_jungle_west_island_d_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_west_island_e_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_west_island_f_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_west_island_g_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_west_island_h_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_jungle_west_island_i_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_base_north_north_a_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_base_north_north_b_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_base_north_northeast_a_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_base_north_northeast_b_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_base_south_south_b_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_base_south_west_a_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_east_a_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_east_b_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_east_c_alpha_target_3dcuv_atlas_color_copy20.vmat",
+				"_chunk_periph_north_a_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_north_b_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_north_c_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_north_d_alpha_target_3dcuv_atlas_color_copy20.vmat",
+				"_chunk_periph_north_e_alpha_target_3dcuv_atlas_color_copy20.vmat",
+				"_chunk_periph_north_f_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_north_g_alpha_target_3dcuv_atlas_color_copy20.vmat",
+				"_chunk_periph_north_h_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_south_e_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_south_f_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_south_g_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_southeast_a_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_southeast_c_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_southeast_d_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_southeast_e_alpha_target_3dcuv_atlas_color_copy20.vmat",
+				"_chunk_periph_west_a_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_west_c_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_west_d_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"_chunk_periph_west_e_alpha_target_3dcuv_atlas_color_copy0.vmat",
+				"bk_distant_horizon_a40.vmat",
+				"flora_wall_flowers560.vmat",
+				"grnd_north_base0.vmat",
+				"grnd_terrain_x0.vmat",
+				"grnd_terrain_y0.vmat",
+				"hgkghj_pasted__pasted__pasted__pasted__test_bases_summoner_platform100.vmat",
+				"hing_temp_lm_grnd_terrain_d_shader0.vmat",
+				"hing_temp_lm_grnd_terrain_f_shader10.vmat",
+				"hing_temp_lm_grnd_terrain_g_shader0.vmat",
+				"hing_temp_lm_grnd_terrain_h_shader0.vmat",
+				"hing_temp_lm_grnd_terrain_i_shader0.vmat",
+				"hing_temp_lm_grnd_terrain_j_shader0.vmat",
+				"hing_temp_lm_grnd_terrain_k_shader0.vmat",
+				"hing_temp_lm_grnd_terrain_m_shader0.vmat",
+				"hing_temp_lm_grnd_terrain_o_shader0.vmat",
+				"hing_temp_lm_grnd_terrain_p_shader0.vmat",
+				"hing_temp_lm_grnd_terrain_r_shader10.vmat",
+				"hing_temp_lm_grnd_terrain_s_shader10.vmat",
+				"hing_temp_lm_grnd_terrain_v_shader0.vmat",
+				"junglew_bush_a_lambert1728280.vmat",
+				"lambert271840.vmat",
+				"lambert1745010.vmat",
+				"lm_grnd_terrain_a_shader0.vmat",
+				"lm_grnd_terrain_b_shader0.vmat",
+				"lm_grnd_terrain_c_shader20.vmat",
+				"lm_grnd_terrain_l_shader10.vmat",
+				"lm_grnd_terrain_q_shader30.vmat",
+				"lm_grnd_terrain_t_shader10.vmat",
+				"lm_grnd_terrain_w_shader40.vmat",
+				"lm_lambert270320.vmat",
+				"pali_col_foliage_b_alpha40.vmat",
+				"pasted__pasted__lm_bases_shader_a40.vmat",
+				"pasted__struc_stairs_base_pali_a0.vmat",
+				"pasted__vista_nw_240.vmat",
+				"struc_stairs_north_base_pali_a0.vmat"
+			]
+		}
+	]
+}
+
+CVMaterialRemapList CVMaterialRemapList_0
+{
+	CVMaterialRemap[] m_vMaterialRemapList = 
+	[
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_base_north_arches_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_base_north_arches_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_base_north_platform_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_base_north_platform_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_base_north_shop_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_base_north_shop_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_base_north_walls_b_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_base_north_walls_b_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_base_north_walls_d_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_base_north_walls_d_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_base_north_walls_f_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_base_north_walls_f_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_base_north_walls_g_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_base_north_walls_g_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_base_south_platform_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_base_south_platform_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_base_south_walls_b_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_base_south_walls_b_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_base_south_walls_c_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_base_south_walls_c_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_base_south_walls_d_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_base_south_walls_d_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_base_south_walls_f_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_base_south_walls_f_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_east_island_a_alpha_target_3dcuv_atlas_color_copy20.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_east_island_a_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_east_island_b_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_east_island_b_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_east_island_c_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_east_island_c_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_east_island_d_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_east_island_d_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_east_island_e_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_east_island_e_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_east_island_f_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_east_island_f_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_east_island_g_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_east_island_g_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_east_island_h_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_east_island_h_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_east_island_i_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_east_island_i_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_north_island_a_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_north_island_a_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_north_island_b_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_north_island_b_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_north_island_c_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_north_island_c_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_north_island_d_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_north_island_d_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_north_island_e_alpha_target_3dcuv_atlas_color_copy20.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_north_island_e_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_north_island_f_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_north_island_f_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_north_island_g_alpha_target_3dcuv_atlas_color_copy20.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_north_island_g_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_north_island_h_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_north_island_h_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_north_island_i_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_north_island_i_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_north_island_j_alpha_target_3dcuv_atlas_color_copy1.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_north_island_j_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_north_island_k_alpha_target_3dcuv_atlas_color_copy20.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_north_island_k_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_north_island_l_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_north_island_l_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_south_island_a_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_south_island_a_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_south_island_b_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_south_island_b_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_south_island_c_alpha_target_3dcuv_atlas_color_copy40.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_south_island_c_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_south_island_d_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_south_island_d_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_south_island_e_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_south_island_e_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_south_island_f_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_south_island_f_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_south_island_g_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_south_island_g_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_south_island_h_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_south_island_h_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_south_island_i_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_south_island_i_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_south_island_j_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_south_island_j_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_south_island_k_alpha_target_3dcuv_atlas_color_copy20.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_south_island_k_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_south_island_l_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_south_island_l_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_west_island_a_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_west_island_a_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_west_island_b_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_west_island_b_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_west_island_c_alpha_target_3dcuv_atlas_color_copy20.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_west_island_c_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_west_island_d_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_west_island_d_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_west_island_e_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_west_island_e_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_west_island_f_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_west_island_f_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_west_island_g_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_west_island_g_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_west_island_h_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_west_island_h_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_jungle_west_island_i_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_jungle_west_island_i_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_base_north_north_a_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_base_north_north_a_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_base_north_north_b_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_base_north_north_b_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_base_north_northeast_a_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_base_north_northeast_a_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_base_north_northeast_b_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_base_north_northeast_b_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_base_south_south_b_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_base_south_south_b_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_base_south_west_a_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_base_south_west_a_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_east_a_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_east_a_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_east_b_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_east_b_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_east_c_alpha_target_3dcuv_atlas_color_copy20.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_east_c_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_north_a_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_north_a_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_north_b_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_north_b_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_north_c_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_north_c_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_north_d_alpha_target_3dcuv_atlas_color_copy20.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_north_d_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_north_e_alpha_target_3dcuv_atlas_color_copy20.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_north_e_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_north_f_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_north_f_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_north_g_alpha_target_3dcuv_atlas_color_copy20.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_north_g_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_north_h_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_north_h_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_south_e_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_south_e_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_south_f_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_south_f_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_south_g_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_south_g_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_southeast_a_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_southeast_a_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_southeast_c_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_southeast_c_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_southeast_d_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_southeast_d_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_southeast_e_alpha_target_3dcuv_atlas_color_copy20.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_southeast_e_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_west_a_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_west_a_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_west_c_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_west_c_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_west_d_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_west_d_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "_chunk_periph_west_e_alpha_target_3dcuv_atlas_color_copy0.vmat"
+			string m_sReplaceMaterial = "materials/imported/_chunk_periph_west_e_alpha_target_3dcuv_atlas_color copy.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "bk_distant_horizon_a40.vmat"
+			string m_sReplaceMaterial = "materials/imported/bk_distant_horizon_a.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "flora_wall_flowers560.vmat"
+			string m_sReplaceMaterial = "materials/imported/flora_wall_flowers.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "grnd_north_base0.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_north_base.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "grnd_terrain_x0.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_x.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "grnd_terrain_y0.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_y.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "hgkghj_pasted__pasted__pasted__pasted__test_bases_summoner_platform100.vmat"
+			string m_sReplaceMaterial = "materials/imported/unq_base_summoner_platform_d.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "hing_temp_lm_grnd_terrain_d_shader0.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_d.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "hing_temp_lm_grnd_terrain_f_shader10.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_f.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "hing_temp_lm_grnd_terrain_g_shader0.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_g.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "hing_temp_lm_grnd_terrain_h_shader0.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_h.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "hing_temp_lm_grnd_terrain_i_shader0.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_i.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "hing_temp_lm_grnd_terrain_j_shader0.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_j.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "hing_temp_lm_grnd_terrain_k_shader0.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_k.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "hing_temp_lm_grnd_terrain_m_shader0.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_m.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "hing_temp_lm_grnd_terrain_o_shader0.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_o.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "hing_temp_lm_grnd_terrain_p_shader0.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_p.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "hing_temp_lm_grnd_terrain_r_shader10.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_r.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "hing_temp_lm_grnd_terrain_s_shader10.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_s.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "hing_temp_lm_grnd_terrain_v_shader0.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_v.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "junglew_bush_a_lambert1728280.vmat"
+			string m_sReplaceMaterial = "materials/imported/unq_junglew_islei_bush_a.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "lambert271840.vmat"
+			string m_sReplaceMaterial = "materials/imported/struc_base_mage_wall_molding.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "lambert1745010.vmat"
+			string m_sReplaceMaterial = "materials/imported/periphcards_01.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "flora_wall_flowers560.vmat"
+			string m_sReplaceMaterial = "materials/imported/flora_wall_flowers.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "junglew_bush_a_lambert1728280.vmat"
+			string m_sReplaceMaterial = "materials/imported/unq_junglew_islei_bush_a.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "lambert271840.vmat"
+			string m_sReplaceMaterial = "materials/imported/struc_base_mage_wall_molding.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "lambert1745010.vmat"
+			string m_sReplaceMaterial = "materials/imported/periphcards_01.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "lm_grnd_terrain_c_shader20.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_c.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "lm_grnd_terrain_l_shader10.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_l.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "lm_grnd_terrain_q_shader30.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_q.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "lm_grnd_terrain_t_shader10.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_t.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "lm_grnd_terrain_w_shader40.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_w.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "lm_lambert270320.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_n.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "pali_col_foliage_b_alpha40.vmat"
+			string m_sReplaceMaterial = "materials/imported/pali_colonnade_foliage_b.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "pasted__pasted__lm_bases_shader_a40.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_south_base.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "pasted__struc_stairs_base_pali_a0.vmat"
+			string m_sReplaceMaterial = "materials/imported/struc_stairs_base_pali_a.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "pasted__vista_nw_240.vmat"
+			string m_sReplaceMaterial = "materials/imported/vista_nw_4.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "struc_stairs_north_base_pali_a0.vmat"
+			string m_sReplaceMaterial = "materials/imported/struc_stairs_north_base_pali_a.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "lm_grnd_terrain_b_shader0.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_b.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "lm_grnd_terrain_a_shader0.vmat"
+			string m_sReplaceMaterial = "materials/imported/grnd_terrain_a.vmat"
+		}
+	]
+}

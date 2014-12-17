@@ -1,4 +1,4 @@
-// THIS FILE CONTAINS 200% YOLO AND 420% SWAG
+// THIS FILE CONTAINS BLAZEIT% YOLO AND 420% SWAG
 
 Layer0
 {
@@ -11,9 +11,9 @@ Layer0
 	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
 	g_vTexCoordOffset "[0.000 0.000]"
 	g_vTexCoordScale "[1.000 1.000]"
-	TextureColor "materials/imported/psd/Grnd_North_Base.psd"
+	TextureColor "materials/imported/psd/Grnd_north_base.psd"
 
 	//---- Translucent ----
 	g_flAlphaTestReference "0.500"
-	TextureTranslucency "materials/imported/alpha/Grnd_North_Base.psd"
+	TextureTranslucency "materials/imported/alpha/Grnd_north_base.psd"
 }

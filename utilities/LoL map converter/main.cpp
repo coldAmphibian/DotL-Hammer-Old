@@ -14,6 +14,7 @@
 #include <math.h>
 #include <float.h>
 #include <iomanip>
+#include <regex>
 
 using namespace std;
 
@@ -22,7 +23,7 @@ public:
 	float position[3];
 	float normals[3];
 	float uv[2];
-	int unknown;
+	//    int unknown;
 };
 
 class nvr_material_struct_class {
@@ -96,6 +97,40 @@ public:
 
 nvr_struct_class nvr_struct;
 char * nvr_data;
+static int pos = 0;
+//std::regex rx("jungle.*island_a");
+
+void check_name(string name);
+
+bool _CFR(float f) { // CheckFloatRange
+	return f < -10000000000000000 || f > 10000000000000000;
+}
+
+string byte_to_binary(char x)
+{
+	string b = "";
+	for (int z = 128; z > 0; z >>= 1) {
+		b += ((x & z) == z) ? "1" : "0";
+	}
+	return b;
+}
+
+void print_data(char* buf, int len){
+	cout << "(" << len << ")     ";
+	for (int i = 0; i < len; i++) {
+		cout << byte_to_binary(buf[i]) << " ";
+	}
+	cout << "|\n";
+}
+
+void print_data_r(char* buf, int len){
+	cout << "(" << len << ") (S) ";
+	for (int i = len - 1; i >= 0; i--) {
+		cout << byte_to_binary(buf[i]) << " ";
+	}
+	cout << "|\n";
+}
+
 
 void _ReadNext(char *buffer, int bytes, bool seek = false);
 string _MemToString(char *buffer);
@@ -112,7 +147,8 @@ void _SaveData(nvr_struct_class nvr_struct, int i);
 float round(float r, int places);
 
 int main(int argc, const char** argv) {
-
+	bool magic_values;
+	bool zeros_all;
 	const char* file;
 
 	if (argc >= 2) {
@@ -175,6 +211,7 @@ int main(int argc, const char** argv) {
 	for (int i = 0; i < nvr_struct.count_material; i++) {
 		_ReadNext(buffer_256, 256);
 		nvr_struct.materials[i].name = _MemToString(buffer_256); //name (256 byte char array)
+		check_name(nvr_struct.materials[i].name);
 		_ReadNext(buffer_4, 4);
 		nvr_struct.materials[i].emissive_color[0] = _MemToFloat(buffer_4); //emissive color Red (4 byte float)
 		_ReadNext(buffer_4, 4);
@@ -191,10 +228,12 @@ int main(int argc, const char** argv) {
 		nvr_struct.materials[i].blend_color[3] = _MemToFloat(buffer_4); //blend color Blue (4 byte float)
 		_ReadNext(buffer_336, 336);
 		nvr_struct.materials[i].texture_filename = _MemToString(buffer_336); //texture file name (336 byte char array)
+		check_name(nvr_struct.materials[i].texture_filename);
 		_ReadNext(buffer_4, 4);
 		nvr_struct.materials[i].opacity = _MemToFloat(buffer_4); //opacity (4 byte float)
 		_ReadNext(buffer_2364, 2364);
 		nvr_struct.materials[i].blend_filename = _MemToString(buffer_2364); //blend file name (2364 byte char array)
+		check_name(nvr_struct.materials[i].blend_filename);
 		nvr_struct.materials[i].used = 0; //used 0 times (reset)
 	}
 	cout << "Finished }\n";
@@ -205,73 +244,92 @@ int main(int argc, const char** argv) {
 	nvr_struct.vertex_lists = new nvr_vertexlist_struct_class[nvr_struct.count_vertex_list];
 
 	for (int i = 0; i < nvr_struct.count_vertex_list; i++) {
+		cout << "\nStart: " << pos << "\n";
 		_ReadNext(buffer_4, 4);
 		int temp_size = _MemToInt(buffer_4); //size of current vertex list
+		print_data(buffer_4, 4);
 		int temp_values[4];
 
 
 		_ReadNext(NULL, 12, true);
 		_ReadNext(buffer_4, 4);
 		temp_values[0] = _MemToFloat(buffer_4);
+		print_data_r(buffer_4, 4);
 		_ReadNext(buffer_4, 4);
 		temp_values[1] = _MemToFloat(buffer_4);
+		print_data_r(buffer_4, 4);
 		_ReadNext(buffer_4, 4);
 		temp_values[2] = _MemToFloat(buffer_4);
-
+		print_data_r(buffer_4, 4);
+		// a1 3c 6c bd
+		// dc 72 69 3c
+		// 40 8c 7f bf
 		_ReadNext(NULL, 12, true);
 		_ReadNext(buffer_4, 4);
 		temp_values[3] = _MemToInt(buffer_4);
+		print_data(buffer_4, 4);
 		_ReadNext(NULL, -40, true);
 
-		if (temp_size / 36 * 36 == temp_size && temp_values[0] <= 1 && temp_values[1] <= 1 && temp_values[2] <= 1) {
+		cout << "Size: " << temp_size << "|| 0: " << temp_values[0] << " 1: " << temp_values[1] << " 2: " << temp_values[2] << " 3: " << temp_values[3] << "\n";
+
+		magic_values = (temp_values[3] == 0xFF7F7F7F) || (temp_values[3] == 0xFF16191E);
+		zeros_all = temp_values[0] <= 1 && temp_values[1] <= 1 && temp_values[2] <= 1;
+
+		if (magic_values && zeros_all) {
+			nvr_struct.vertex_lists[i].size = temp_size / 40;
+			nvr_struct.vertex_lists[i].type = 2;
+		}
+		else if (temp_size / 36 * 36 == temp_size && zeros_all) {
 			nvr_struct.vertex_lists[i].size = temp_size / 36;
 			nvr_struct.vertex_lists[i].type = 1;
 		}
-		else
-			if ((temp_values[3] == 0xFF7F7F7F) || (temp_values[3] == 0xFF16191E)) {
-			nvr_struct.vertex_lists[i].size = temp_size / 40;
-			nvr_struct.vertex_lists[i].type = 2;
-			}
-			else {
-				nvr_struct.vertex_lists[i].size = temp_size / 12;
-				nvr_struct.vertex_lists[i].type = 0;
-			}
+		else {
+			nvr_struct.vertex_lists[i].size = temp_size / 12;
+			nvr_struct.vertex_lists[i].type = 0;
+		}
+		cout << "\tType: " << nvr_struct.vertex_lists[i].type << " Size: " << nvr_struct.vertex_lists[i].size << "\n";
 
-			nvr_struct.vertex_lists[i].vertices = new nvr_vertex[nvr_struct.vertex_lists[i].size];
 
-			if (nvr_struct.vertex_lists[i].type > 0) {
-				for (int j = 0; j < nvr_struct.vertex_lists[i].size; j++) {
+		nvr_struct.vertex_lists[i].vertices = new nvr_vertex[nvr_struct.vertex_lists[i].size];
+
+		cout << "\tIdx: " << i << "\n\n";
+		float p0, p1, p2;
+		if (nvr_struct.vertex_lists[i].type > 0) {
+			for (int j = 0; j < nvr_struct.vertex_lists[i].size; j++) {
+				_ReadNext(buffer_4, 4);
+				nvr_struct.vertex_lists[i].vertices[j].position[0] = _MemToFloat2(buffer_4); //x position of current vertex
+				_ReadNext(buffer_4, 4);
+				nvr_struct.vertex_lists[i].vertices[j].position[1] = _MemToFloat2(buffer_4); //y position of current vertex
+				_ReadNext(buffer_4, 4);
+				nvr_struct.vertex_lists[i].vertices[j].position[2] = _MemToFloat2(buffer_4); //z position of current vertex
+				_ReadNext(buffer_4, 4);
+				nvr_struct.vertex_lists[i].vertices[j].normals[0] = _MemToFloat2(buffer_4); //x component of normal on current vertex
+				_ReadNext(buffer_4, 4);
+				nvr_struct.vertex_lists[i].vertices[j].normals[1] = _MemToFloat2(buffer_4); //y component of normal on current vertex
+				_ReadNext(buffer_4, 4);
+				nvr_struct.vertex_lists[i].vertices[j].normals[2] = _MemToFloat2(buffer_4); //z component of normal on current vertex
+				_ReadNext(buffer_4, 4);
+				// Known problem with UVs being infinity.
+				nvr_struct.vertex_lists[i].vertices[j].uv[0] = _MemToFloat2(buffer_4); //u coordinate on texture
+				_ReadNext(buffer_4, 4);
+				nvr_struct.vertex_lists[i].vertices[j].uv[1] = _MemToFloat2(buffer_4); //v coordinate on texture
+				_ReadNext(buffer_4, 4); //unknown value
+				//                nvr_struct.vertex_lists[i].vertices[j].unknown = _MemToInt(buffer_4);
+				if (nvr_struct.vertex_lists[i].type == 2) {
 					_ReadNext(buffer_4, 4);
-					nvr_struct.vertex_lists[i].vertices[j].position[0] = _MemToFloat(buffer_4); //x position of current vertex
-					_ReadNext(buffer_4, 4);
-					nvr_struct.vertex_lists[i].vertices[j].position[1] = _MemToFloat(buffer_4); //y position of current vertex
-					_ReadNext(buffer_4, 4);
-					nvr_struct.vertex_lists[i].vertices[j].position[2] = _MemToFloat(buffer_4); //z position of current vertex
-					_ReadNext(buffer_4, 4);
-					nvr_struct.vertex_lists[i].vertices[j].normals[0] = _MemToFloat(buffer_4); //x component of normal on current vertex
-					_ReadNext(buffer_4, 4);
-					nvr_struct.vertex_lists[i].vertices[j].normals[1] = _MemToFloat(buffer_4); //y component of normal on current vertex
-					_ReadNext(buffer_4, 4);
-					nvr_struct.vertex_lists[i].vertices[j].normals[2] = _MemToFloat(buffer_4); //z component of normal on current vertex
-					_ReadNext(buffer_4, 4);
-					nvr_struct.vertex_lists[i].vertices[j].uv[0] = _MemToFloat(buffer_4); //u coordinate on texture
-					_ReadNext(buffer_4, 4);
-					nvr_struct.vertex_lists[i].vertices[j].uv[1] = _MemToFloat(buffer_4); //v coordinate on texture
-					_ReadNext(buffer_4, 4);
-					nvr_struct.vertex_lists[i].vertices[j].unknown = _MemToInt(buffer_4); //unknown value
-					if (nvr_struct.vertex_lists[i].type == 2) _ReadNext(buffer_4, 4);
 				}
 			}
-			else {
-				for (int j = 0; j < nvr_struct.vertex_lists[i].size; j++) {
-					_ReadNext(buffer_4, 4);
-					nvr_struct.vertex_lists[i].vertices[j].position[0] = _MemToFloat(buffer_4); //x position of current vertex
-					_ReadNext(buffer_4, 4);
-					nvr_struct.vertex_lists[i].vertices[j].position[1] = _MemToFloat(buffer_4); //y position of current vertex
-					_ReadNext(buffer_4, 4);
-					nvr_struct.vertex_lists[i].vertices[j].position[2] = _MemToFloat(buffer_4); //z position of current vertex
-				}
+		}
+		else {
+			for (int j = 0; j < nvr_struct.vertex_lists[i].size; j++) {
+				_ReadNext(buffer_4, 4);
+				nvr_struct.vertex_lists[i].vertices[j].position[0] = _MemToFloat2(buffer_4); //x position of current vertex
+				_ReadNext(buffer_4, 4);
+				nvr_struct.vertex_lists[i].vertices[j].position[1] = _MemToFloat2(buffer_4); //y position of current vertex
+				_ReadNext(buffer_4, 4);
+				nvr_struct.vertex_lists[i].vertices[j].position[2] = _MemToFloat2(buffer_4); //z position of current vertex
 			}
+		}
 	}
 	cout << "Finished }\n";
 
@@ -351,6 +409,12 @@ int main(int argc, const char** argv) {
 	return 0;
 }
 
+void check_name(string name) {
+	//    if (regex_search(name.begin(), name.end(), rx)) {
+	//        cout << "FOUND A MATERIAL!!!! :>" << name << "\n";
+	//    }
+}
+
 void _PrintStart(string name, int count) {
 	stringstream ss;
 	ss << name << "[" << count << "]";
@@ -359,7 +423,6 @@ void _PrintStart(string name, int count) {
 }
 
 void _ReadNext(char *buffer, int bytes, bool seek) {
-	static int pos = 0;
 
 	if (!seek) {
 		for (int i = 0; i < bytes; i++) {
@@ -386,16 +449,28 @@ unsigned int _MemToInt(char *buffer) {
 }
 
 float _MemToFloat2(char *buffer) {
-	int full = ((0xFF000000 & (buffer[3] << 24)) | (0x00FF0000 & (buffer[2] << 16)) | (0x0000FF00 & (buffer[1] << 8)) | (0x000000FF & buffer[0]));
-	int sign = 0x00000001 & (full >> 31);
-	int exponent = 0x000000FF & (full >> 23);
-	int mantissa = 0x007FFFFF & full;
-	float ret = round(pow(-1.0f, sign)*(1.0 + ((float)mantissa) / 8388608) * pow(2.0f, exponent - 127), 6);
-
-	if (!isfinite(ret)) {
-		ret = 0;
-	} //catch NaN and infinite
-	return ret;
+	//    int full = ((0xFF000000 & (buffer[3] << 24)) | (0x00FF0000 & (buffer[2] << 16)) | (0x0000FF00 & (buffer[1] << 8)) | (0x000000FF & buffer[0]));
+	//    int sign = 0x00000001 & (full >> 31);
+	//    int exponent = 0x000000FF & (full >> 23);
+	//    int mantissa = 0x007FFFFF & full;
+	//    float ret = round(pow(-1.0f, sign)*(1.0 + ((float) mantissa) / 8388608) * pow(2.0f, exponent - 127), 6);
+	//
+	//    if (!isfinite(ret)) {
+	//        ret = 0;
+	//    } //catch NaN and infinite
+	//    return ret;
+	float f = _MemToFloat(buffer);
+	if (_CFR(f)) {
+		cout << "Failed for " << pos - 4 << " next bytes" << f << "\n";
+		cout << "Bytes: " << ((int)buffer[0]) << "|" << ((int)buffer[1]) << "|" << ((int)buffer[2]) << "|" << ((int)buffer[3]) << "|\n";
+		print_data_r(buffer, 4);
+		//_ReadNext(buffer, 4);
+		f = _MemToFloat(buffer);
+		if (_CFR(f)) {
+			return 4.20420;
+		}
+	}
+	return f;
 }
 
 float _MemToFloat(char *buffer) {
@@ -415,11 +490,6 @@ string _GenHeader() {
 	ss << "#   DotL project. For more information and to contribute see:   #\n";
 	ss << "#                                                               #\n";
 	ss << "#   https://github.com/coldAmphibian/DotL-Hammer                #\n";
-	ss << "#                                                               #\n";
-	ss << "# The code used to generate this file is based on the code      #\n";
-	ss << "#   avaliable here:                                             #\n";
-	ss << "#                                                               #\n";
-	ss << "#   http://forum.xentax.com/viewtopic.php?p=92650#p92650        #\n";
 	ss << "#                                                               #\n";
 	ss << "#################################################################\n";
 	ss << "\n\n\n";
@@ -457,15 +527,16 @@ void _SaveData(nvr_struct_class nvr_struct, int i) {
 
 	cout << "Converting Model " << i << "/" << nvr_struct.count_model << "          " << obj_file_name << "\n";
 
+	cout << "\tIdx: " << XFile_vertex_index << " Off:" << XFile_vertex_offset << " Len:" << XFile_vertex_length << "\n";
+
 
 	stringstream ssXFile;
 	// Sets Float precision
 	ssXFile << fixed << showpoint << setprecision(6);
 
-	ssXFile << "mtllib " << mtl_name;
-	ssXFile << "usemtl " << nvr_struct.materials[nvr_struct.models[i].material].name;
+	ssXFile << "mtllib " << mtl_name << "\n";
 
-	ssXFile << "# List of vertices\n";
+	ssXFile << "\n\n# Vertices: " << XFile_vertex_length << "\n";
 
 	for (int j = XFile_vertex_offset; j < XFile_vertex_offset + XFile_vertex_length; j++) {
 		nvr_vertex v = nvr_struct.vertex_lists[XFile_vertex_index].vertices[j];
@@ -473,27 +544,31 @@ void _SaveData(nvr_struct_class nvr_struct, int i) {
 			<< v.position[1] << " "
 			<< v.position[2] << "\n";
 	}
-	ssXFile << "# List of vertex normals\n";
+	ssXFile << "# End Vertices: " << XFile_vertex_length << "\n";
+
+	ssXFile << "\n\n# Vertex Normals: " << XFile_index_length << "\n";
 	for (int j = XFile_vertex_offset; j < XFile_vertex_offset + XFile_vertex_length; j++) {
 		ssXFile << "vn " << nvr_struct.vertex_lists[XFile_vertex_index].vertices[j].normals[0] << " "
 			<< nvr_struct.vertex_lists[XFile_vertex_index].vertices[j].normals[1] << " "
 			<< nvr_struct.vertex_lists[XFile_vertex_index].vertices[j].normals[2] << "\n";
 	}
+	ssXFile << "# End Vertex Normals: " << XFile_index_length << "\n";
 	//texture coordinates
+
+	ssXFile << "\n\n# UV: " << XFile_index_length << "\n";
 	for (int j = XFile_vertex_offset; j < XFile_vertex_offset + XFile_vertex_length; j++) {
 		ssXFile << "vt " << nvr_struct.vertex_lists[XFile_vertex_index].vertices[j].uv[0] << " "
-			<< nvr_struct.vertex_lists[XFile_vertex_index].vertices[j].uv[1] << "\n";
+			<< (1 - nvr_struct.vertex_lists[XFile_vertex_index].vertices[j].uv[1]) << "\n";
 	}
+	ssXFile << "\n\n# End UV: " << XFile_index_length << "\n";
+
+	ssXFile << "usemtl " << nvr_struct.materials[nvr_struct.models[i].material].name << "\n";
 	//indices for positions
-
-	//starts counting how many points are defined... IDK why I called it facecount but it fixes problems
-	int faceCount = 0;
-
 	for (int j = XFile_index_offset; j < XFile_index_offset + XFile_index_length; j += 3) {
 		// F**k you 1 indexing.
-		ssXFile << "f " << (1 + nvr_struct.index_lists[XFile_index_index].indices[j] - XFile_vertex_offset) << "/" << to_string(++faceCount) << " "
-			<< (1 + nvr_struct.index_lists[XFile_index_index].indices[j + 1] - XFile_vertex_offset) << "/" << to_string(++faceCount) << " "
-			<< (1 + nvr_struct.index_lists[XFile_index_index].indices[j + 2] - XFile_vertex_offset) << "/" << to_string(++faceCount) << "\n";
+		ssXFile << "f " << (1 + nvr_struct.index_lists[XFile_index_index].indices[j] - XFile_vertex_offset) << "/" << 1 + nvr_struct.index_lists[XFile_index_index].indices[j] - XFile_vertex_offset << " "
+			<< (1 + nvr_struct.index_lists[XFile_index_index].indices[j + 1] - XFile_vertex_offset) << "/" << 1 + nvr_struct.index_lists[XFile_index_index].indices[j + 1] - XFile_vertex_offset << " "
+			<< (1 + nvr_struct.index_lists[XFile_index_index].indices[j + 2] - XFile_vertex_offset) << "/" << 1 + nvr_struct.index_lists[XFile_index_index].indices[j + 2] - XFile_vertex_offset << "\n";
 	}
 
 	//save to file
