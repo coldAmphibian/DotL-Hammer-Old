@@ -4,19 +4,9 @@ Layer0
 {
 	shader "global_lit_simple.vfx"
 
-	//---- Fullbright ----
-	F_FULLBRIGHT 1
-
-	//---- Translucent ----
-	F_ALPHA_TEST 1
-
 	//---- Color ----
 	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
 	g_vTexCoordOffset "[0.000 0.000]"
 	g_vTexCoordScale "[1.000 1.000]"
-	TextureColor "materials/minimap/original/lol_minimap_viktor.psd"
-
-	//---- Translucent ----
-	g_flAlphaTestReference "0.500"
-	TextureTranslucency "materials/minimap/original/lol_minimap_viktor_alpha.psd"
+	TextureColor "materials/default/default_color.tga"
 }
