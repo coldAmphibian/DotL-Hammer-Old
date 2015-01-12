@@ -9,5 +9,5 @@ When working, try to form a team with what you're interested in. eg. if you want
 
 ##Contributing and Credit
 [More info in the wiki](https://github.com/coldAmphibian/DotL-Hammer/wiki)  
-[Please fill in this form so we know yo exist](https://docs.google.com/forms/d/1kbk3tmqNW-vlnwXR2JCrdH2ZgSZNv9Z2l7ZlhuMxGwI/viewform?usp=send_form)  
+You can contact me at ColdAmphibian@gmail.com
 Please also read the style guide for file names and ability names... if i've put them up
