@@ -1,0 +1,1 @@
+This script imports everything from the "psd" folder as a vmt. You'll need to change the directory in the no_alpha.vmt and base_vmat.vmt files to the location of where you wish to save your textures. If there is a copy of the file with the same name in the exclude folder, the script will create the vmt without the alpha layer.

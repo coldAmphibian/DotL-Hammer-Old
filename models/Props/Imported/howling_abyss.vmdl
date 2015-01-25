@@ -1,0 +1,398 @@
+<!-- schema text {7e125a45-3d83-4043-b292-9e24f8ef27b4} generic {198980d8-3a93-4919-b4c6-dd1fb07a3a4b} -->
+CVModel CVModel_0
+{
+	CVmeshList m_meshList = CVmeshList
+	{
+		CVmesh[] m_meshList = 
+		[
+			CVmesh
+			{
+				string m_meshName = "howling_abyss"
+				string m_meshFile = "models/props/imported/fbx/howling_abyss.fbx"
+				string m_materialSearchPath = ""
+				bool m_bSkinParentedObjects = true
+				bool m_bExpensiveTangents = false
+				bool m_bExpensiveVertices = false
+				CVmorphInfo* m_pMorphInfo = NULL
+			}
+		]
+	}
+	CVClothProxyMeshList m_clothProxyMeshList = CVClothProxyMeshList
+	{
+		CVClothProxyMesh[] m_clothProxyMeshList = 
+		[
+			
+		]
+		float m_flClothEnableThreshold = 0.050000
+		bool m_bCreateStaticBone = false
+		int m_nMaxBonesPerVertex = 4
+		bool m_bRemoveUnusedBonesEnabled = false
+		bool m_bUseOnlyRealMeshBones = false
+		float m_flMatchProxiesToMeshes = 1.000000
+		float m_flReservedFloat = 0.000000
+		int m_nReservedInt = 0
+		bool m_bReservedBool1 = false
+		bool m_bReservedBool2 = false
+		bool m_bReservedBool3 = false
+		bool m_bReservedBool4 = false
+	}
+	CVphysicsMeshList m_physicsMeshList = CVphysicsMeshList
+	{
+		CVphysicsMesh[] m_meshList = 
+		[
+			
+		]
+	}
+	CVmodelInfo* m_pModelInfo = NULL
+	CVBoneFlagListReference m_pBoneFlagList = CVBoneFlagListReference
+	{
+		CVBoneFlagList* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVhitBoxSetListReference[] m_pHitBoxSetLists = 
+	[
+		
+	]
+	CVattachmentListReference[] m_pAttachmentLists = 
+	[
+		
+	]
+	CVanimGroupReference[] m_pAnimGroups = 
+	[
+		
+	]
+	CVNodeMaterialGroupListReference m_pMaterialGroupList = CVNodeMaterialGroupListReference
+	{
+		NodeMaterialGroupList_t* m_pObject = &NodeMaterialGroupList_t_0
+		string m_sFileName = ""
+	}
+	CVMeshGroupListReference m_pMeshGroupList = CVMeshGroupListReference
+	{
+		MeshGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVLODGroupListReference m_pLodGroupList = CVLODGroupListReference
+	{
+		LODGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVpropBreakableListReference m_pPropBreakableList = CVpropBreakableListReference
+	{
+		CVpropBreakableList* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVpropDataListReference m_pPropDataList = CVpropDataListReference
+	{
+		CVpropDataList* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVConstraintListReference[] m_pConstraintLists = 
+	[
+		
+	]
+	string m_collision = ""
+	string m_sMDLFilename = ""
+	string[] m_scriptFiles = 
+	[
+		
+	]
+	CVMaterialRemapList* m_pMaterialRemapList = &CVMaterialRemapList_0
+	float m_flFbxScale = 1.000000
+	float m_flQCScale = 1.000000
+	CVPsf* m_pvPsf = NULL
+	string m_keyValueText = ""
+	bool m_bStaticProp = false
+	bool m_bEnableClothProcessing = true
+	float m_flClothEnableThreshold = 0.050000
+	int m_nMaxClothVertsPerMesh = 2048
+}
+
+NodeMaterialGroupList_t NodeMaterialGroupList_t_0
+{
+	NodeMaterialGroup_t[] m_materialGroups = 
+	[
+		NodeMaterialGroup_t
+		{
+			string m_name = "default"
+			string[] m_materialList = 
+			[
+				"basesnow_996.vmat",
+				"crane3_465.vmat",
+				"decal_swbase_cloth_1358.vmat",
+				"fj_nature_gank_brush_04_1365.vmat",
+				"ha_ap_hero_tower2_698.vmat",
+				"ha_skybox_01_0.vmat",
+				"ice_cave_2_1329.vmat",
+				"prop_bracket_889.vmat",
+				"prop_brazier_2_745.vmat",
+				"prop_bridge_keystone_521.vmat",
+				"prop_chain_base_plate_445.vmat",
+				"prop_chainlink_592.vmat",
+				"prop_cloth_686.vmat",
+				"prop_healthpack_1161.vmat",
+				"prop_ice_chunksa_524.vmat",
+				"prop_icecliff_f_245.vmat",
+				"prop_icecliff_snowtransition_1022.vmat",
+				"prop_icicles_c_821.vmat",
+				"prop_ne_base_gate_1014.vmat",
+				"prop_statue_hero_towera_723.vmat",
+				"prop_woodbeams_721.vmat",
+				"props_icicles_b_474.vmat",
+				"props_sw_shop_ice_frame_1361.vmat",
+				"shelves2_1323.vmat",
+				"shop_items2_1016.vmat",
+				"shop_keeper_magic_ice1_1333.vmat",
+				"statue_base_765.vmat",
+				"statue_breakable_03_467.vmat",
+				"structure_base_ground_950.vmat",
+				"structure_base_lower_wall_918.vmat",
+				"structure_base_wall_d_1167.vmat",
+				"structure_base_wall_e_1217.vmat",
+				"structure_base_wall_f_1265.vmat",
+				"structure_base_wall_g_618.vmat",
+				"structure_hole_874.vmat",
+				"structure_keep_a_578.vmat",
+				"structure_lane_ground_935.vmat",
+				"structure_lane_middlehole_927.vmat",
+				"structure_lane_stairs_1001.vmat",
+				"structure_lane_walls_843.vmat",
+				"structure_lane_walls2_1139.vmat",
+				"structure_middlehole_876.vmat",
+				"structure_north_shop_comp3_1325.vmat",
+				"structure_periph_base_301.vmat"
+			]
+		}
+	]
+}
+
+CVMaterialRemapList CVMaterialRemapList_0
+{
+	CVMaterialRemap[] m_vMaterialRemapList = 
+	[
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "basesnow_996.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/basesnow.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "crane3_465.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/crane3.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "decal_swbase_cloth_1358.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/decal_swbase_cloth.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "fj_nature_gank_brush_04_1365.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/fj_nature_gank_brush_04.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "ha_ap_hero_tower2_698.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/ha_ap_hero_tower2.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "ha_skybox_01_0.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/ha_skybox_01.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "ice_cave_2_1329.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/ice_cave_2.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "prop_bracket_889.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/prop_bracket.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "prop_brazier_2_745.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/prop_brazier_2.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "prop_bridge_keystone_521.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/prop_bridge_keystone.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "prop_chain_base_plate_445.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/prop_chain_base_plate.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "prop_chainlink_592.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/prop_chainlink.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "prop_cloth_686.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/prop_cloth.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "prop_healthpack_1161.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/prop_healthpack.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "prop_ice_chunksa_524.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/prop_ice_chunksa.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "prop_icecliff_f_245.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/prop_icecliff_f.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "prop_icecliff_snowtransition_1022.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/prop_icecliff_snowtransition.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "prop_icicles_c_821.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/prop_icicles_c.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "prop_ne_base_gate_1014.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/prop_ne_base_gate.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "prop_statue_hero_towera_723.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/prop_statue_hero_towera.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "prop_woodbeams_721.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/prop_woodbeams.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "props_icicles_b_474.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/props_icicles_b.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "props_sw_shop_ice_frame_1361.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/props_sw_shop_ice_frame.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "shelves2_1323.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/shelves2.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "prop_ne_base_gate_1014.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/prop_ne_base_gate.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "shop_items2_1016.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/shop_items2.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "shop_keeper_magic_ice1_1333.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/shop_keeper_magic_ice1.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "statue_base_765.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/statue_base.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "statue_breakable_03_467.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/statue_breakable_03.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_base_ground_950.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_base_ground.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_base_lower_wall_918.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_base_lower_wall.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_base_wall_d_1167.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_base_wall_d.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_base_wall_e_1217.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_base_wall_e.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_base_wall_f_1265.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_base_wall_f.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_base_wall_g_618.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_base_wall_g.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_hole_874.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_hole.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_keep_a_578.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_keep_a.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_lane_ground_935.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_lane_ground.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_lane_middlehole_927.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_lane_middlehole.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_lane_stairs_1001.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_lane_stairs.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_lane_walls_843.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_lane_walls.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_lane_walls2_1139.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_lane_walls2.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_middlehole_876.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_middlehole.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_north_shop_comp3_1325.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_north_shop_comp3.vmat"
+		},
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "structure_periph_base_301.vmat"
+			string m_sReplaceMaterial = "materials/imported/howling abyss/structure_periph_base.vmat"
+		}
+	]
+}
