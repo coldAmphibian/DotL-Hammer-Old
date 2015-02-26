@@ -1,0 +1,598 @@
+<!-- schema text {7e125a45-3d83-4043-b292-9e24f8ef27b4} generic {198980d8-3a93-4919-b4c6-dd1fb07a3a4b} -->
+CVModel CVModel_0
+{
+	CVmeshList m_meshList = CVmeshList
+	{
+		CVmesh[] m_meshList = 
+		[
+			CVmesh
+			{
+				string m_meshName = "ha_order_tower"
+				string m_meshFile = "models/buildings/fbx/ha_order_tower/ha_order_tower.fbx"
+				string m_materialSearchPath = ""
+				bool m_bSkinParentedObjects = true
+				bool m_bExpensiveTangents = false
+				bool m_bExpensiveVertices = false
+				CVmorphInfo* m_pMorphInfo = NULL
+			}
+		]
+	}
+	CVClothProxyMeshList m_clothProxyMeshList = CVClothProxyMeshList
+	{
+		CVClothProxyMesh[] m_clothProxyMeshList = 
+		[
+			
+		]
+		float m_flClothEnableThreshold = 0.050000
+		bool m_bCreateStaticBone = false
+		int m_nMaxBonesPerVertex = 4
+		bool m_bRemoveUnusedBonesEnabled = false
+		bool m_bUseOnlyRealMeshBones = false
+		float m_flMatchProxiesToMeshes = 1.000000
+		float m_flReservedFloat = 0.000000
+		int m_nReservedInt = 0
+		bool m_bReservedBool1 = false
+		bool m_bReservedBool2 = false
+		bool m_bReservedBool3 = false
+		bool m_bReservedBool4 = false
+	}
+	CVphysicsMeshList m_physicsMeshList = CVphysicsMeshList
+	{
+		CVphysicsMesh[] m_meshList = 
+		[
+			
+		]
+	}
+	CVmodelInfo* m_pModelInfo = NULL
+	CVBoneFlagListReference m_pBoneFlagList = CVBoneFlagListReference
+	{
+		CVBoneFlagList* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVhitBoxSetListReference[] m_pHitBoxSetLists = 
+	[
+		CVhitBoxSetListReference
+		{
+			CVhitBoxSetList* m_pObject = &CVhitBoxSetList_0
+			string m_sFileName = ""
+		}
+	]
+	CVattachmentListReference[] m_pAttachmentLists = 
+	[
+		
+	]
+	CVanimGroupReference[] m_pAnimGroups = 
+	[
+		CVanimGroupReference
+		{
+			CVanimGroup* m_pObject = &CVanimGroup_0
+			string m_sFileName = ""
+		}
+	]
+	CVNodeMaterialGroupListReference m_pMaterialGroupList = CVNodeMaterialGroupListReference
+	{
+		NodeMaterialGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVMeshGroupListReference m_pMeshGroupList = CVMeshGroupListReference
+	{
+		MeshGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVLODGroupListReference m_pLodGroupList = CVLODGroupListReference
+	{
+		LODGroupList_t* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVpropBreakableListReference m_pPropBreakableList = CVpropBreakableListReference
+	{
+		CVpropBreakableList* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVpropDataListReference m_pPropDataList = CVpropDataListReference
+	{
+		CVpropDataList* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVConstraintListReference[] m_pConstraintLists = 
+	[
+		
+	]
+	string m_collision = ""
+	string m_sMDLFilename = ""
+	string[] m_scriptFiles = 
+	[
+		
+	]
+	CVMaterialRemapList* m_pMaterialRemapList = &CVMaterialRemapList_0
+	float m_flFbxScale = 1.000000
+	float m_flQCScale = 1.000000
+	CVPsf* m_pvPsf = NULL
+	string m_keyValueText = ""
+	bool m_bStaticProp = false
+	bool m_bEnableClothProcessing = true
+	float m_flClothEnableThreshold = 0.050000
+	int m_nMaxClothVertsPerMesh = 2048
+}
+
+CVhitBoxSetList CVhitBoxSetList_0
+{
+	CVhitBoxSet[] m_HitBoxSets = 
+	[
+		CVhitBoxSet
+		{
+			string m_name = "default"
+			CVhitBox[] m_HitBoxes = 
+			[
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage61"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage61"
+					float(3) m_vMinBounds = ( -0.010933, -0.015131, -0.015352 )
+					float(3) m_vMaxBounds = ( 0.010933, 0.015131, 0.015352 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage1"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage1"
+					float(3) m_vMinBounds = ( -0.024428, -0.023348, -0.017462 )
+					float(3) m_vMaxBounds = ( 0.024428, 0.023348, 0.017462 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage3"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage3"
+					float(3) m_vMinBounds = ( -0.007112, -0.014911, -0.012543 )
+					float(3) m_vMaxBounds = ( 0.007112, 0.014910, 0.012543 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage4"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage4"
+					float(3) m_vMinBounds = ( -0.012516, -0.031055, -0.005885 )
+					float(3) m_vMaxBounds = ( 0.012516, 0.031055, 0.005885 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage6"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage6"
+					float(3) m_vMinBounds = ( -0.005530, -0.057788, -0.015695 )
+					float(3) m_vMaxBounds = ( 0.005530, 0.057788, 0.015695 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage7"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage7"
+					float(3) m_vMinBounds = ( -0.022552, -0.059357, -0.020004 )
+					float(3) m_vMaxBounds = ( 0.022552, 0.059357, 0.020004 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage8"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage8"
+					float(3) m_vMinBounds = ( -0.015020, -0.024032, -0.031563 )
+					float(3) m_vMaxBounds = ( 0.015020, 0.024032, 0.031563 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage9"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage9"
+					float(3) m_vMinBounds = ( -0.025360, -0.041070, -0.023628 )
+					float(3) m_vMaxBounds = ( 0.025360, 0.041070, 0.023628 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage10"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage10"
+					float(3) m_vMinBounds = ( -0.021644, -0.051719, -0.039776 )
+					float(3) m_vMaxBounds = ( 0.021644, 0.051719, 0.039776 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage12"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage12"
+					float(3) m_vMinBounds = ( -0.010779, -0.012984, -0.011060 )
+					float(3) m_vMaxBounds = ( 0.010779, 0.012984, 0.011060 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "joint2"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "joint2"
+					float(3) m_vMinBounds = ( -0.009135, -0.042056, -0.016542 )
+					float(3) m_vMaxBounds = ( 0.009135, 0.042056, 0.016542 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage14"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage14"
+					float(3) m_vMinBounds = ( -0.003111, -0.021658, -0.004078 )
+					float(3) m_vMaxBounds = ( 0.003111, 0.021658, 0.004078 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage15"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage15"
+					float(3) m_vMinBounds = ( -0.003776, -0.012927, -0.006568 )
+					float(3) m_vMaxBounds = ( 0.003776, 0.012927, 0.006568 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage16"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage16"
+					float(3) m_vMinBounds = ( -0.002840, -0.029350, -0.004452 )
+					float(3) m_vMaxBounds = ( 0.002840, 0.029350, 0.004452 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage17"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage17"
+					float(3) m_vMinBounds = ( -0.007112, -0.026485, -0.006091 )
+					float(3) m_vMaxBounds = ( 0.007112, 0.026485, 0.006091 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage18"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage18"
+					float(3) m_vMinBounds = ( -0.008194, -0.036671, -0.024020 )
+					float(3) m_vMaxBounds = ( 0.008194, 0.036671, 0.024020 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage19"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage19"
+					float(3) m_vMinBounds = ( -0.033287, -0.051230, -0.040817 )
+					float(3) m_vMaxBounds = ( 0.033287, 0.051230, 0.040817 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage21"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage21"
+					float(3) m_vMinBounds = ( -0.018662, -0.044600, -0.021126 )
+					float(3) m_vMaxBounds = ( 0.018662, 0.044600, 0.021126 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage22"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage22"
+					float(3) m_vMinBounds = ( -0.003198, -0.026592, -0.009700 )
+					float(3) m_vMaxBounds = ( 0.003198, 0.026592, 0.009700 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage24"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage24"
+					float(3) m_vMinBounds = ( -0.009309, -0.049842, -0.024124 )
+					float(3) m_vMaxBounds = ( 0.009309, 0.049842, 0.024124 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage25"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage25"
+					float(3) m_vMinBounds = ( -0.004978, -0.031782, -0.012556 )
+					float(3) m_vMaxBounds = ( 0.004978, 0.031782, 0.012556 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage27"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage27"
+					float(3) m_vMinBounds = ( -0.028603, -0.033372, -0.039665 )
+					float(3) m_vMaxBounds = ( 0.028603, 0.033372, 0.039665 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage28"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage28"
+					float(3) m_vMinBounds = ( -0.016475, -0.022577, -0.018044 )
+					float(3) m_vMaxBounds = ( 0.016475, 0.022577, 0.018044 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage29"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage29"
+					float(3) m_vMinBounds = ( -0.013987, -0.038688, -0.017408 )
+					float(3) m_vMaxBounds = ( 0.013987, 0.038688, 0.017408 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage30"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage30"
+					float(3) m_vMinBounds = ( -0.014896, -0.028604, -0.021825 )
+					float(3) m_vMaxBounds = ( 0.014897, 0.028604, 0.021825 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage31"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage31"
+					float(3) m_vMinBounds = ( -0.011412, -0.022670, -0.017173 )
+					float(3) m_vMaxBounds = ( 0.011413, 0.022670, 0.017173 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage11"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage11"
+					float(3) m_vMinBounds = ( -0.066368, -0.067695, -0.078826 )
+					float(3) m_vMaxBounds = ( 0.066368, 0.067695, 0.078826 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_HA_OrderTurret_Damage20"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_HA_OrderTurret_Damage20"
+					float(3) m_vMinBounds = ( -0.001636, -0.027218, -0.004426 )
+					float(3) m_vMaxBounds = ( 0.001636, 0.027218, 0.004426 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_frgmt2"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_frgmt2"
+					float(3) m_vMinBounds = ( -0.002816, -0.023157, -0.001262 )
+					float(3) m_vMaxBounds = ( 0.002816, 0.023157, 0.001262 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_frgmt4"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_frgmt4"
+					float(3) m_vMinBounds = ( -0.010291, -0.045977, -0.021560 )
+					float(3) m_vMaxBounds = ( 0.010291, 0.045977, 0.021560 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_frgmt5"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_frgmt5"
+					float(3) m_vMinBounds = ( -0.010141, -0.031506, -0.024484 )
+					float(3) m_vMaxBounds = ( 0.010141, 0.031529, 0.024484 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_frgmt6"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_frgmt6"
+					float(3) m_vMinBounds = ( -0.012281, -0.018064, -0.013499 )
+					float(3) m_vMaxBounds = ( 0.012281, 0.018064, 0.013499 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_frgmt8"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_frgmt8"
+					float(3) m_vMinBounds = ( -0.026358, -0.059675, -0.028675 )
+					float(3) m_vMaxBounds = ( 0.026358, 0.059676, 0.028675 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_frgmt9"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_frgmt9"
+					float(3) m_vMinBounds = ( -0.010864, -0.008057, -0.007203 )
+					float(3) m_vMaxBounds = ( 0.010865, 0.008057, 0.007203 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_frgmt10"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_frgmt10"
+					float(3) m_vMinBounds = ( -0.003437, -0.007100, -0.002360 )
+					float(3) m_vMaxBounds = ( 0.003437, 0.007100, 0.002360 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_frgmt1"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_frgmt1"
+					float(3) m_vMinBounds = ( -0.007112, -0.019369, -0.005363 )
+					float(3) m_vMaxBounds = ( 0.007112, 0.019369, 0.005363 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				},
+				CVhitBox
+				{
+					string m_name = "bone_frgmt7"
+					string m_sSurfaceProperty = ""
+					int m_nGroupId = 0
+					string m_sBoneName = "bone_frgmt7"
+					float(3) m_vMinBounds = ( -0.038544, -0.040874, -0.032434 )
+					float(3) m_vMaxBounds = ( 0.038544, 0.040874, 0.032434 )
+					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+				}
+			]
+		}
+	]
+}
+
+CVanimGroup CVanimGroup_0
+{
+	string m_Name = ""
+	CVReferenceSkeletonReference m_pReferenceSkeleton = CVReferenceSkeletonReference
+	{
+		CVReferenceSkeleton* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVBoneFlagListReference m_pBoneFlagList = CVBoneFlagListReference
+	{
+		CVBoneFlagList* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVseqGroupReference m_pSeqGroup = CVseqGroupReference
+	{
+		CVseqGroup* m_pObject = NULL
+		string m_sFileName = ""
+	}
+	CVanimGroupReference[] m_pAnimGroups = 
+	[
+		
+	]
+	CVanim[] m_Vanim = 
+	[
+		CVanim
+		{
+			string m_Animationname = "ha_order_tower_break_1"
+			string m_Filepath = "models/buildings/fbx/ha_order_tower/ha_order_tower_break_1.fbx"
+			int m_nStartframe = 0
+			int m_nEndframe = 99
+			float m_flFps = 30.000000
+			CAnimationLoop m_Loop = CAnimationLoop
+			{
+				bool m_bLoop = true
+				bool m_bSmoothLoop = false
+				int m_nSmoothLoopStart = 0
+				int m_nSmoothLoopEnd = 0
+				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
+				{
+					bool m_bEnabled = false
+					int m_nLoopRestart = 0
+				}
+			}
+			bool m_bHidden = false
+			CActivity[] m_Activities = 
+			[
+				CActivity
+				{
+					string m_Name = "ACT_DOTA_IDLE"
+					int m_nWeight = 1
+				}
+			]
+			CAnimationEvent[] m_AnimationEvents = 
+			[
+				
+			]
+			CMotionFrame[] m_MotionFrames = 
+			[
+				
+			]
+			CIKrule*[] m_pIkRules = 
+			[
+				
+			]
+			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
+			{
+				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
+				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
+			}
+			string[] m_Keywords = 
+			[
+				
+			]
+			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
+			{
+				float m_flFadeInTime = 0.200000
+				float m_flFadeOutTime = 0.200000
+			}
+		}
+	]
+	string[] m_sScripts = 
+	[
+		
+	]
+}
+
+CVMaterialRemapList CVMaterialRemapList_0
+{
+	CVMaterialRemap[] m_vMaterialRemapList = 
+	[
+		CVMaterialRemap
+		{
+			string m_sSearchMaterial = "mat_ha_ap_orderturret.vmat"
+			string m_sReplaceMaterial = "materials/imported/buildings/ha_ap_orderturret.vmat"
+		}
+	]
+}

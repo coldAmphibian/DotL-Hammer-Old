@@ -7,5 +7,5 @@ Layer0
 	F_STENCIL_MASKING 1
 
 	//---- Color ----
-	Texture "materials/overviews/2dlevelminimap.psd"
+	Texture "materials/overviews/summoners_rift.psd"
 }
